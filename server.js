@@ -24,7 +24,7 @@ x.get("/rps", (req, res) => {
 });
 
 //route mengubah/membuat RPS yang sudah ada didalam Web
-x.post("/rps", (req, res) => {
+x.post("/rps1", (req, res) => {
   res.send("RPS diperbarui oleh Admin");
 });
 

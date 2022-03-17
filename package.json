@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/deliciasyifa/loki_a5/issues"
   },
-  "homepage": "https://github.com/deliciasyifa/loki_a5#readme"
+  "homepage": "https://github.com/deliciasyifa/loki_a5#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
