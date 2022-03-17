@@ -18,6 +18,16 @@ x.get("/logout", (req, res) => {
   res.send("Ini merupakan halaman logout :)");
 });
 
+//route menampilkan RPS yang sudah ada didalam Web
+x.get("/rps", (req, res) => {
+  res.send("Tampilan RPS yang Sudah Tersimpan Pada Website");
+});
+
+//route mengubah/membuat RPS yang sudah ada didalam Web
+x.post("/rps", (req, res) => {
+  res.send("RPS diperbarui oleh Admin");
+});
+
 x.listen(port, () => {
   console.log(`Server berada pada port ${port}`);
 });
