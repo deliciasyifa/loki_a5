@@ -1,0 +1,19 @@
+{
+  "name": "loki_a5",
+  "version": "1.0.0",
+  "description": "Repository Kelompok 5 Mata Kuliah Pemrograman Web A \r 1. Delicia Syifa Maghfira 2011522027\r 2. Daffa Riza Muliya 2011527001\r 3. Riska Shifa Salsabila 2011521009\r 4. Dina Lathifunnisa 2011521003\r 5. Winanda Afrilia Harisya 2011522016",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deliciasyifa/loki_a5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deliciasyifa/loki_a5/issues"
+  },
+  "homepage": "https://github.com/deliciasyifa/loki_a5#readme"
+}
