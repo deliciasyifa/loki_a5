@@ -63,10 +63,40 @@ x.get("/downloadrps", (req, res) => {
   res.send("RPS bisa di download di sini");
 });
 
-
 //route hapus CPMK
 x.delete("/clearcpmk", (req, res) => {
   res.send("Data berhasil dihapus\n Data yang dihapus juga akan terhapus secara\notomatis di penyimpanan komputer anda");
+});
+
+//route menambah referensi
+x.get("/addreferensi", (req, res) => {
+  res.send("Silahkan tambah referensi disini");
+});
+
+//route mengubah referensi
+x.get("/updatereferensi", (req, res) => {
+  res.send("Silahkan Ubaha Referensi");
+});
+
+//route menghapus referensi
+x.get("/delatereferensi", (req, res) => {
+  res.send("Referensi telah berhasil di hapus\n klik Undo jika anda ingin membatalkan pengahpusan file");
+});
+
+
+//route Dosen dapat menambah komponen penilaian
+x.get("/addknilai", (req, res) => {
+  res.send("Silahkan tambah Komponen penilaian anda");
+});
+
+//route Dosen dapat merubah komponen penilaian
+x.get("/updateknilai", (req, res) => {
+  res.send("Silahkan ubah Komponen penilaian anda");
+});
+
+//route Dosen dapat menghapus komponen penilaian
+x.get("/clearknilai", (req, res) => {
+  res.send("Komponen penilaian anda telah di hapus\n silahkan tambahkan komponen kembali pada menu tambah komponen penialain");
 });
 
 x.listen(port, () => {
