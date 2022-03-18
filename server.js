@@ -43,6 +43,27 @@ x.put("/ubahrps", (req, res) => {
   res.send("RPS berhasil diperbarui\n Terima Kasih");
 });
 
+//route dosen menambah pertemuan mingguan pada rps
+x.post("/tambahpert", (req, res) => {
+  res.send("Dosen menambah pertemuan mingguan pada RPS");
+});
+
+//route dosen mengubah pertemuan mingguan pada rps
+x.put("/ubahpert", (req, res) => {
+  res.send("Dosen mengubah pertemuan mingguan pada RPS");
+});
+
+//route melihat rps
+x.get("/lihatrps", (req, res) => {
+  res.send("Mahasiswa dapat melihat RPS di sini");
+});
+
+//route mendownload rps
+x.get("/downloadrps", (req, res) => {
+  res.send("RPS bisa di download di sini");
+});
+
+
 //route hapus CPMK
 x.delete("/clearcpmk", (req, res) => {
   res.send("Data berhasil dihapus\n Data yang dihapus juga akan terhapus secara\notomatis di penyimpanan komputer anda");
