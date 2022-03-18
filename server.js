@@ -5,12 +5,12 @@ const port = 8000;
 
 //route awal
 x.get("/", (req, res) => {
-  res.send("Welcome di Server");
+  res.send("Welcome di Server JS");
 });
 
 //route untuk halaman login
 x.get("/login", (req, res) => {
-  res.send("Halaman Login");
+  res.send("Ini adalah Halaman Login");
 });
 
 //route untuk halaman logout
@@ -20,12 +20,12 @@ x.get("/logout", (req, res) => {
 
 //route menampilkan RPS yang sudah ada didalam Web
 x.get("/rps", (req, res) => {
-  res.send("Tampilan RPS yang Sudah Tersimpan Pada Website");
+  res.send("Daftar RPS ");
 });
 
 //route mengubah/membuat RPS yang sudah ada didalam Web
 x.post("/rps1", (req, res) => {
-  res.send("RPS diperbarui oleh Admin");
+  res.send("RPS telah diperbarui ");
 });
 
 //route Cetak RPS
@@ -33,7 +33,7 @@ x.get("/print", (req, res) => {
   res.send("Tampilan RPS seperti ini");
 });
 
-//route menambah RPS barru
+//route untuk menambahkan RPS baru
 x.post("/newrps", (req, res) => {
   res.send("RPS baru berhasil ditambahkan \n Terima Kasih");
 });
@@ -60,7 +60,7 @@ x.get("/lihatrps", (req, res) => {
 
 //route mendownload rps
 x.get("/downloadrps", (req, res) => {
-  res.send("RPS bisa di download di sini");
+  res.send("Halaman untuk download RPS");
 });
 
 //route hapus CPMK
