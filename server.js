@@ -33,7 +33,7 @@ x.get("/print", (req, res) => {
   res.send("Tampilan RPS seperti ini");
 });
 
-//route menambah RPS baru
+//route menambah RPS barru
 x.post("/newrps", (req, res) => {
   res.send("RPS baru berhasil ditambahkan \n Terima Kasih");
 });
