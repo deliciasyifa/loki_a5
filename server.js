@@ -38,11 +38,6 @@ x.post("/newrps", (req, res) => {
   res.send("RPS baru berhasil ditambahkan \n Terima Kasih");
 });
 
-//route mengubah RPS yang sudah ada
-x.put("/ubahrps", (req, res) => {
-  res.send("RPS berhasil diperbarui\n Terima Kasih");
-});
-
 //route dosen menambah pertemuan mingguan pada rps
 x.post("/tambahpert", (req, res) => {
   res.send("Dosen menambah pertemuan mingguan pada RPS");
@@ -51,6 +46,11 @@ x.post("/tambahpert", (req, res) => {
 //route dosen mengubah pertemuan mingguan pada rps
 x.put("/ubahpert", (req, res) => {
   res.send("Dosen mengubah pertemuan mingguan pada RPS");
+});
+
+//route mengubah RPS yang sudah ada
+x.put("/ubahrps", (req, res) => {
+  res.send("RPS berhasil diperbarui\n Terima Kasih");
 });
 
 //route melihat rps
@@ -73,20 +73,24 @@ x.get("/addreferensi", (req, res) => {
   res.send("Silahkan tambah referensi disini");
 });
 
-//route mengubah referensi
-x.get("/updatereferensi", (req, res) => {
-  res.send("Silahkan Ubaha Referensi");
-});
-
 //route menghapus referensi
 x.get("/delatereferensi", (req, res) => {
   res.send("Referensi telah berhasil di hapus\n klik Undo jika anda ingin membatalkan pengahpusan file");
 });
 
+//route mengubah referensi
+x.get("/updatereferensi", (req, res) => {
+  res.send("Silahkan Ubaha Referensi");
+});
 
 //route Dosen dapat menambah komponen penilaian
 x.get("/addknilai", (req, res) => {
   res.send("Silahkan tambah Komponen penilaian anda");
+});
+
+//route Dosen dapat menghapus komponen penilaian
+x.get("/clearknilai", (req, res) => {
+  res.send("Komponen penilaian anda telah di hapus\n silahkan tambahkan komponen kembali pada menu tambah komponen penialain");
 });
 
 //route Dosen dapat merubah komponen penilaian
@@ -94,10 +98,7 @@ x.get("/updateknilai", (req, res) => {
   res.send("Silahkan ubah Komponen penilaian anda");
 });
 
-//route Dosen dapat menghapus komponen penilaian
-x.get("/clearknilai", (req, res) => {
-  res.send("Komponen penilaian anda telah di hapus\n silahkan tambahkan komponen kembali pada menu tambah komponen penialain");
-});
+
 
 x.listen(port, () => {
   console.log(`Server berada pada port ${port}`);
