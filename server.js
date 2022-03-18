@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const x = express();
-const port = 800;
+const port = 8000;
 
 //route awal
 x.get("/", (req, res) => {
@@ -24,7 +24,7 @@ x.get("/rps", (req, res) => {
 });
 
 //route mengubah/membuat RPS yang sudah ada didalam Web
-x.put("/rps1", (req, res) => {
+x.post("/rps1", (req, res) => {
   res.send("RPS diperbarui oleh Admin");
 });
 
