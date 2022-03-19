@@ -25,7 +25,7 @@ x.get("/rps", (req, res) => {
 
 //route mengubah/membuat RPS yang sudah ada didalam Web
 x.post("/rps1", (req, res) => {
-  res.send("RPS diperbarui oleh Admin");
+  res.send("Berhasil Mengubah RPS");
 });
 
 //route Cetak RPS
@@ -39,7 +39,7 @@ x.post("/newrps", (req, res) => {
 });
 
 //route mengubah RPS yang sudah ada
-x.put("/ubahrps", (req, res) => {
+x.post("/ubahrps", (req, res) => {
   res.send("RPS berhasil diperbarui\n Terima Kasih");
 });
 
@@ -49,7 +49,7 @@ x.post("/tambahpert", (req, res) => {
 });
 
 //route dosen mengubah pertemuan mingguan pada rps
-x.put("/ubahpert", (req, res) => {
+x.post("/ubahpert", (req, res) => {
   res.send("Dosen mengubah pertemuan mingguan pada RPS");
 });
 
@@ -64,7 +64,7 @@ x.get("/downloadrps", (req, res) => {
 });
 
 //route hapus CPMK
-x.delete("/clearcpmk", (req, res) => {
+x.post("/clearcpmk", (req, res) => {
   res.send("Data berhasil dihapus\n Data yang dihapus juga akan terhapus secara\notomatis di penyimpanan komputer anda");
 });
 
