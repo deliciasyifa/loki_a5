@@ -26,6 +26,7 @@ x.get("/daftarrps", (req, res) => {
 //route mengubah/membuat RPS yang sudah ada didalam Web
 x.post("/rps1", (req, res) => {
   res.send("Berhasil Mengubah RPS");
+});
 
 //route untuk modifikasi RPS
 x.post("/modifrps", (req, res) => {
@@ -71,10 +72,6 @@ x.get("/lihatrps", (req, res) => {
 x.get("/downloadrps", (req, res) => {
   res.send("Halaman untuk download RPS");
 });
-
-
-//route hapus CPMK
-x.get("/clearcpmk", (req, res) => {
 
 //route untuk menghapus CPMK
 x.get("/clearcpmk", (req, res) => {
