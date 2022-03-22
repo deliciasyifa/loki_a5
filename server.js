@@ -49,12 +49,12 @@ x.get("/addreferensi", (req, res) => {
 });
 
 //route menghapus referensi
-x.get("/deletereferensi", (req, res) => {
+x.delete("/deletereferensi", (req, res) => {
   res.send("Referensi telah berhasil dihapus");
 });
 
 //route mengubah referensi
-x.get("/updatereferensi", (req, res) => {
+x.put("/updatereferensi", (req, res) => {
   res.send("Silahkan Ubah Referensi");
 });
 
