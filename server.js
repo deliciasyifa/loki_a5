@@ -74,7 +74,11 @@ x.get("/updatekomnilai", (req, res) => {
 });
 
 //bagian yang menggunakan method post
-x.use('/me', post)
+x.use('/RPS', RPS)
+x.use('/Referensi', RPS) //UNTUK RPS INI DI SESUAIKAN NAMA FILE ATAU GMN?
+x.use('/Komponen', RPS)
+x.use('/Pertemuan', RPS)
+x.use('/CPMK', RPS)
 
 x.use('/public', express.static('public'));
 
