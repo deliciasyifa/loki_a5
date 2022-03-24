@@ -43,7 +43,7 @@ router.patch("/updatecpmk", (req, res) => {
         "Cek": "Update DATA CPMK BERHASIL",
         "code": ["OK",200]
     }
-    res.json(obj);
+    res.json(obj)
     console.log("\n\nBerhasil Update Data CPMK\n");
   });
 
