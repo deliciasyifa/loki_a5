@@ -43,42 +43,14 @@ x.get("/clearcpmk", (req, res) => {
   res.send("Data berhasil dihapus\n Data yang dihapus juga akan terhapus secara\notomatis di penyimpanan komputer anda");
 });
 
-//route menambah referensi
-x.get("/addreferensi", (req, res) => {
-  res.send("Silahkan tambah referensi disini");
-});
 
-//route menghapus referensi
-x.delete("/deletereferensi", (req, res) => {
-  res.send("Referensi telah berhasil dihapus");
-});
-
-//route mengubah referensi
-x.put("/updatereferensi", (req, res) => {
-  res.send("Silahkan Ubah Referensi");
-});
-
-//route Dosen dapat menambah komponen penilaian
-x.get("/addkomnilai", (req, res) => {
-  res.send("Silahkan tambah Komponen penilaian anda");
-});
-
-//route Dosen dapat menghapus komponen penilaian
-x.get("/clearkomnilai", (req, res) => {
-  res.send("Komponen penilaian anda telah di hapus\n silahkan tambahkan komponen kembali pada menu tambah komponen penialain");
-});
-
-//route Dosen dapat merubah komponen penilaian
-x.get("/updatekomnilai", (req, res) => {
-  res.send("Silahkan ubah Komponen penilaian anda");
-});
 
 //bagian yang menggunakan method post
 x.use('/RPS', RPS)
-x.use('/Referensi', RPS) //UNTUK RPS INI DI SESUAIKAN NAMA FILE ATAU GMN?
-x.use('/Komponen', RPS)
-x.use('/Pertemuan', RPS)
-x.use('/CPMK', RPS)
+x.use('/Referensi', referensi)
+x.use('/Komponen', komponen_nilai)
+x.use('/Pertemuan', pertemuan_mingguan)
+x.use('/CPMK', cpmk)
 
 x.use('/public', express.static('public'));
 
