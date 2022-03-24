@@ -1,6 +1,7 @@
 const express = require('express');
 const x = express();
 const post = require('./post');
+const cpmk = require('./cpmk');
 const port = 8000;
 
 //route awal
@@ -75,6 +76,7 @@ x.get("/updatekomnilai", (req, res) => {
 
 //bagian yang menggunakan method post
 x.use('/me', post)
+x.use('/tbbagian', cpmk)
 
 x.use('/public', express.static('public'));
 
