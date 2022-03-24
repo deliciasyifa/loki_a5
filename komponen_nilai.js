@@ -2,8 +2,8 @@ const express = require ('express');
 const router = express.Router();           
 
   //route Dosen dapat menambah komponen penilaian
-  x.post("/addkomp", (req, res) => {
-    let.add={
+  router.post("/addkomp", (req, res) => {
+    let add={
         "message":"Silahkan tambah komponen penilaian disini",
         "id":205,
         "namaMK":"pemrograman Web",
@@ -20,8 +20,8 @@ const router = express.Router();
   });
   
   //route Dosen dapat menghapus komponen penilaian
-  x.delete("/clearkomp/:id", (req, res) => {
-    let.del={
+  router.delete("/clearkomp/:id", (req, res) => {
+    let del={
         "message":"Masukkan id Komponen penilaian yang akan dihapus",
         "id":205,
         "namaMK":"pemrograman Web",
@@ -38,8 +38,8 @@ const router = express.Router();
   });
   
   //route Dosen dapat merubah komponen penilaian
-  x.put("/updatekomp/:id", (req, res) => {
-    let.upd={
+  router.put("/updatekomp/:id", (req, res) => {
+    let upd={
         "message":"Masukkan id referensi yang akan diUpdate/ dimodifikasi",
         "id":205,
         "namaMK":"pemrograman Web",
