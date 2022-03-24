@@ -18,33 +18,6 @@ x.get("/logout", (req, res) => {
   res.send("Ini merupakan halaman logout :)");
 });
 
-//route menampilkan RPS yang sudah ada didalam Web
-x.get("/daftarrps", (req, res) => {
-  res.send("Daftar RPS");
-});
-
-//route Cetak RPS
-x.get("/print", (req, res) => {
-  res.send("Mencetak RPS");
-});
-
-//route melihat rps
-x.get("/lihatrps", (req, res) => {
-  res.send("Mahasiswa dapat melihat RPS di sini");
-});
-
-//route mendownload rps
-x.get("/downloadrps", (req, res) => {
-  res.send("Halaman untuk download RPS");
-});
-
-//route untuk menghapus CPMK
-x.get("/clearcpmk", (req, res) => {
-  res.send("Data berhasil dihapus\n Data yang dihapus juga akan terhapus secara\notomatis di penyimpanan komputer anda");
-});
-
-
-
 //bagian yang menggunakan method post
 x.use('/RPS', RPS)
 x.use('/Referensi', referensi)
