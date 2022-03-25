@@ -65,7 +65,7 @@ router.delete("/hapuscpmk", (req, res) => {
                     "5. Mahasiswa mampu menggunakan dan mendesain format data JSON & deploy aplikasi web ke internet\n"
                 ],
         "Cek": "DELETE DATA CPMK BERHASIL",
-        "code": ["OK",200]
+        "code": ["SIP",200]
     }
     res.json(obj);
     console.log("\n\nBerhasil Delete Data CPMK\n");
