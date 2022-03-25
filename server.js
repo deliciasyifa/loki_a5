@@ -5,7 +5,7 @@ const komponen_nilai = require('./komponen_nilai');
 const pertemuan_mingguan = require('./pertemuan_mingguan');
 const referensi = require('./referensi');
 const RPS = require('./RPS');
-const port = 8000;
+const port = 800;
 
 //route awal
 x.get('/', (req, res) => {
