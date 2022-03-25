@@ -22,13 +22,12 @@ x.get("/logout", (req, res) => {
   res.send("Ini merupakan halaman logout :)");
 });
 
-//bagian yang menggunakan method post
-
 x.use("/bagian", referensi);
 x.use("/bagian", komponen_nilai);
 x.use("/bagian", RPS);
 
 x.use("/public", express.static("public"));
+
 
 x.listen(port, () => {
   console.log(`Server berada pada port ${port}`);
