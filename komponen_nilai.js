@@ -2,56 +2,55 @@ const express = require ('express');
 const router = express.Router();           
 
   //route Dosen dapat menambah komponen penilaian
-  x.post("/addkomp", (req, res) => {
-    let.add={
-        "message":"Silahkan tambah komponen penilaian disini",
-        "id":205,
-        "namaMK":"pemrograman Web",
-        "komponen":{
-            "Tugas":25,
-            "Kuis":10,
-            "UTS":30,
-            "UAS":30,
-            "Sikap":5
-        }
+  router.post("/tambah", (req, res) => {
+    let add={
+        "message":"======Penambahan Data Komponen Nilai======",
+        "Course_id":205,
+        "Name":"pemrograman Web",
+        "komponen":[
+                      "1. Tugas =  15%",
+                      "2. Keaktifan = 10%",
+                      "3. UTS = 30%",
+                      "4. UAS = 45%",
+         ]
+
     }
     res.json(add);
     console.log("Komponen penilaian berhasil ditambahkan");
   });
   
   //route Dosen dapat menghapus komponen penilaian
-  x.delete("/clearkomp/:id", (req, res) => {
-    let.del={
-        "message":"Masukkan id Komponen penilaian yang akan dihapus",
-        "id":205,
-        "namaMK":"pemrograman Web",
-        "komponen":{
-            "Tugas":25,
-            "Kuis":10,
-            "UTS":30,
-            "UAS":30,
-            "Sikap":5
-        }
+  router.delete("/hapus", (req, res) => {
+    let del={
+      "message":"======Delete Data Komponen Nilai======",
+      "Course_id":205,
+      "Name":"pemrograman Web",
+      "komponen":[
+                    "1. Tugas   = 25%",
+                    "3. UTS     = 30%",
+                    "4. UAS     = 45%",
+       ]
     }
     res.json(del);
-    console.log("Komponen penilaian dengan Id"+req.params.id+" berhasil dihapus");
+    console.log("Komponen penilaian berhasil dihapus");
   });
   
   //route Dosen dapat merubah komponen penilaian
-  x.put("/updatekomp/:id", (req, res) => {
-    let.upd={
-        "message":"Masukkan id referensi yang akan diUpdate/ dimodifikasi",
-        "id":205,
-        "namaMK":"pemrograman Web",
-        "komponen":{
-            "Tugas":20,
-            "Kuis":15,
-            "UTS":30,
-            "UAS":35 
-        }
+  router.put("/ubah", (req, res) => {
+    let upd={
+      "message":"======Update Komponen Nilai======",
+      "Course_id":205,
+      "Name":"pemrograman Web",
+      "komponen":[
+                    "1. Tugas   = 10%",
+                    "3. UTS     = 25%",
+                    "4. UAS     = 45%",
+                    "5. Kuis    = 15%",
+                    "6. Sikap   = 5%"
+       ]
     }
     res.json(del);
-    console.log("Komponen penilaian dengan Id"+req.params.id+" berhasil update");
+    console.log("Komponen penilaian berhasil update");
   });
 
   module.exports = router;
