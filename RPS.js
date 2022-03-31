@@ -30,6 +30,3 @@ router.post("/changerps", (req, res) => {
   res.json(add);
   console.log("RPS berhasil diubah");
 });
-
-
-module.exports = router;
