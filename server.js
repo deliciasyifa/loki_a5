@@ -26,7 +26,10 @@ x.use("/bagian", referensi);
 x.use("/bagian", komponen_nilai);
 x.use("/bagian", RPS);
 
-x.use("/public", express.static("public"));
+
+x.use("/bagian", cpmk);
+x.use("/bagian", pertemuan_mingguan);
+
 
 
 x.listen(port, () => {
