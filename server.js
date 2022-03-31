@@ -1,10 +1,6 @@
 const express = require("express");
 const x = express();
-const cpmk = require('./cpmk');
-const komponen_nilai = require('./komponen_nilai');
-const pertemuan_mingguan = require('./pertemuan_mingguan');
-const referensi = require('./referensi');
-const RPS = require('./RPS');
+
 const port = 8000;
 
 //route awal
@@ -30,7 +26,6 @@ x.use("/bagian", cpmk)
 
 x.use("/bagian", cpmk);
 x.use("/bagian", pertemuan_mingguan);
-
 
 
 x.listen(port, () => {
