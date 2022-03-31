@@ -2,8 +2,8 @@ const express = require ('express');
 const router = express.Router();
 
 //route menambah referensi
-x.post("/addref", (req, res) => {
-    let.add={
+router.post("/addref", (req, res) => {
+    let add={
         "message":"Silahkan tambah referensi disini",
         "id":101,
         "nama":[
@@ -16,8 +16,8 @@ x.post("/addref", (req, res) => {
 });
   
   //route menghapus referensi
-  x.delete("/deleteref/:id", (req, res) => {
-    let.del={
+  router.delete("/deleteref/:id", (req, res) => {
+    let del={
         "message":"Masukkan id referensi yang akan dihapus",
         "id":102,
         "nama":[
@@ -29,8 +29,8 @@ x.post("/addref", (req, res) => {
   });
   
   //route mengubah referensi
-  x.put("/updateref", (req, res) => {
-    let.upd={
+  router.put("/updateref", (req, res) => {
+    let upd={
         "message":"Masukkan id referensi yang akan diUpdate/ dimodifikasi",
         "id":101,
         "nama":[
