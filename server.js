@@ -1,5 +1,6 @@
 const express = require("express");
 const x = express();
+
 const cpmk = require('./cpmk');
 const DB = require('./DB');
 const komponen_nilai = require('./komponen_nilai');
@@ -8,6 +9,7 @@ const referensi = require('./referensi');
 const RPS = require('./RPS');
 const connect_seque = require('./CPMK_ORM/connect_seque');
 const course_los = require('./CPMK_ORM/course_los');
+
 const port = 8000;
 
 
@@ -36,6 +38,7 @@ x.use("/bagian", connect_seque);
 x.use("/bagian", course_los);
 
 x.use("/public", express.static("public"));
+
 
 
 x.listen(port, () => {
