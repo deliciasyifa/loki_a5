@@ -6,7 +6,7 @@ router.getAll = async function(req, res){
         await model.course_los.findAll().then((result) => {
             if(result.length > 0){
                 res.status(200).json({
-                    message: "Data CPMK Ditemukan",
+                    message: "Data Berhasil Ditemukan",
                     data: result
                 })
             }else{

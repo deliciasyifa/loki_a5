@@ -3,7 +3,7 @@ const router = express.Router();
 const {Sequelize,DataTypes} = require('sequelize');
 const sequelize = new Sequelize("mysql://root@localhost/loki");
 
-sequelize.define("course_los", {
+sequelize.define('course_los', {
 
     id:{
         type:DataTypes.INTEGER,
