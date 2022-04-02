@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const mysql = require('mysql') 
+const mysql = require('mysql'); 
 
 router.get('/database', function(req, res, next){
 
@@ -15,12 +15,12 @@ router.get('/database', function(req, res, next){
     connection.connect();
 
     // coba query
-    let sql = "SELECT *FROM users";
+    /*let sql = "SELECT *FROM users";
     connection.query(sql, function(err, result, fields){
         if(err) throw err;
 
         res.json(result);
-    });
+    });*/
 
     
 
