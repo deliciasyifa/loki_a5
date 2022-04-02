@@ -25,7 +25,7 @@ conn.query(
         if(error) throw error;
 
         let response={
-            "message":'berhasil tambah data',
+            "message":"berhasil tambah data",
         }
         res.json(data[0]);
     }
