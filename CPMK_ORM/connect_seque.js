@@ -11,7 +11,7 @@ router.getAll = async function(req, res){
                 })
             }else{
                 res.status(200).json({
-                    message: 'data tidak ada',
+                    message:"Data Tidak Ditemukan",
                     data: []
                 })
             }
