@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dosen - Edit Komponen Penilaian </title>
+    <!-- Favicon icon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+      <!--**********************************
+            Nav header start
+        ***********************************-->
+      <div class="nav-header">
+        <div class="brand-logo">
+          <a href="index.html">
+            <b class="logo-abbr"><img src="images/logo.png" alt="" /> </b>
+            <span class="logo-compact"><img src="./images/logo-compact.png" alt="" /></span>
+            <span class="brand-title">
+              <img src="images/logo-text.png" alt="" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <!--**********************************
+            Nav header end
+        ***********************************-->
+
+      <!--**********************************
+            Header start
+        ***********************************-->
+      <div class="header">
+        <div class="header-content clearfix">
+          <div class="nav-control">
+            <div class="hamburger">
+              <span class="toggle-icon"><i class="icon-menu"></i></span>
+            </div>
+          </div>
+
+          <div class="header-right">
+            <ul class="clearfix">
+              <li class="icons dropdown">
+                <div class="user-img c-pointer position-relative" data-toggle="dropdown">
+                  <span class="activity active"></span>
+                  <img src="images/user/1.png" height="40" width="40" alt="" />
+                </div>
+                <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                  <div class="dropdown-content-body">
+                    <ul>
+                      <li>
+                        <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                      </li>
+
+                      <hr class="my-2" />
+                      <li>
+                        <a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+      <!--**********************************
+            Sidebar start
+        ***********************************-->
+      <div class="nk-sidebar">
+        <div class="nk-nav-scroll">
+          <ul class="metismenu" id="menu">
+            <li class="nav-label">Dashboard</li>
+            <li>
+              <a href=""> <i class="fa fa-home fa-2x"></i><span class="nav-text">Home</span> </a>
+            </li>
+            <li>
+              <a class="has-arrow" href="javascript:void()" aria-expanded="false"> <i class="fa fa-file-text fa-5x"></i><span class="nav-text">RPS</span> </a>
+              <ul aria-expanded="false">
+                <li><a href="./index.html">Komponen Penilaian</a></li>
+                <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+      <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid mt-6">
+              <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="rps text-white">
+                      <h5 align="center" style="margin-top:20px">EDIT KOMPONEN PENILAIAN</h5>
+                        <br><br>
+                      
+                       <input class="div" id="text" name= "kodematkul"    type="kodematkul"   id="kodematkul"   placeholder="Kode" />
+                       <input id="text" name= "namamatkul"    type="namamatkul"   id="namamatkul"   placeholder="Nama Mata Kuliah" />
+                       <input id="text" name= "ta"            type="ta"           id="namamatkul"   placeholder="TA yyyy/yyyy" />
+                       <input id="text" name= "smt"           type="smt"          id="smtmatkul"    placeholder="Semester" />
+                       <input id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="ganjil/genap" />
+                        <br><br>
+                       <div class="bobot bobot1">
+                         <div class="sks "> <label class="label text-white">BOBOT SKS</label></div>
+                         <label class="text-white"> <br>&nbsp Jumlah SKS</label>
+                         <input class="div" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                         <br>
+                         <label class="text-white"> <br>&nbsp Bobot Teori</label>
+                         <input class="div" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                         <br>
+                         <label class="text-white"> <br>&nbsp Bobot Praktikum</label>
+                         <input class="div" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                      
+                      </div>
+
+                      <div class="bobot bobot2">
+                        <div class="sks1 "> <label class="label text-white">PENGETAHUAN MAHASISWA</label></div>
+                          <div class="row g-3">
+                            <div class="col-md-4">
+                            <label class=" div"for="">Tugas</label>
+                            <input class="div col-md-4" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                            </div>
+
+                            <div class="col-md-4">
+                              <label class=" div"for="">Tugas Besar</label>
+                              <input class="div col-md-4" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                              </div>
+
+                              <div class="col-md-4">
+                                <label class=" div"for="">Kuis</label>
+                                <input class="div col-md-4" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                                </div>
+
+                                <div class="col-md-4">
+                                  <label class=" div"for="">Kehadiran</label>
+                                  <input class="div col-md-4" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                                  </div>
+
+                                  <div class="col-md-4">
+                                    <label class=" div"for="">UTS</label>
+                                    <input class="div col-md-4" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label class=" div"for="">UAS</label>
+                                      <input class="div col-md-4" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                                      </div>
+                     </div>
+
+          
+
+                      
+                    </div >
+
+                    <br><br>
+                    <div class="bobot bobot3">
+                      <div class="sks "> <label class="label text-white">DOSEN PENGAMPU</label></div>
+                      <label class="text-white"> <br>&nbsp Dosen Pengampu 1</label>
+                      <input class="div" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                      <br>
+                      <label class="text-white"> <br>&nbsp Dosen Pengampu 2</label>
+                      <input class="div" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                      <br>
+                      <label class="text-white"> <br>&nbsp Dosen Pengampu 3</label>
+                      <input class="div" id="text" name= "ganjil/genap"  type="ganjil/genap" id="ganjil/genap" placeholder="" />
+                   
+                   </div>
+
+                   
+                    </div>
+
+                  
+                      <!-- <a class="label1 text-white"  href="#" class="previous">&laquo; &nbspPrevious</a> | -->
+                      <button  type="button" class="button1 btn btn-primary">Simpan</button>
+                       
+  
+                    
+                    
+                </div>
+            </div>
+          </div>
+      <!--**********************************
+            Content body end
+        ***********************************-->
+
+      <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+          <div class="copyright">
+            <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Kelompok 5</a> 2022</p>
+          </div>
+        </div>
+      <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+  </body>
+</html>
