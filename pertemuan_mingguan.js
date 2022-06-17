@@ -1,5 +1,6 @@
+const express = require ('express');
+const router = express.Router();           
 
-const router = express.Router();
 
 //route menambah pertemuan mingguan
 router.post("/addpm/:id_pm", (req, res) => {
@@ -44,7 +45,7 @@ router.post("/addpm/:id_pm", (req, res) => {
   });
 
 //route Dosen dapat merubah pertemuan minggua
-x.put("/editpm/:id_pm", (req, res) => {
+router.put("/editpm/:id_pm", (req, res) => {
     let.upd = {
         "message": "Mengedit data pertemuan mingguan",
         "id_pm":"pm1",
@@ -84,7 +85,7 @@ x.put("/editpm/:id_pm", (req, res) => {
     console.log("\n\nPertemuan Mingguan "+req.params.id_pm+" berhasil diedit");
   });
 
-x.put("/deletepm/:id_pm", (req, res) => {
+router.put("/deletepm/:id_pm", (req, res) => {
     let.del={
         "message": "Menghapus data pertemuan mingguan",
         "id_pm":"pm1",

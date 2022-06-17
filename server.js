@@ -2,7 +2,7 @@ const express = require("express");
 const x = express();
 
 const cpmk = require('./cpmk');
-const DB = require('./DB');
+const conn = require('./config/conn');
 const komponen_nilai = require('./komponen_nilai');
 const pertemuan_mingguan = require('./pertemuan_mingguan');
 const referensi = require('./referensi');
@@ -33,7 +33,8 @@ x.use("/bagian", referensi);
 x.use("/bagian", komponen_nilai);
 x.use("/bagian", RPS);
 x.use("/bagian", cpmk);
-x.use("/bagian", DB);
+x.use("/bagian", pertemuan_mingguan);
+x.use("/bagian", conn);
 x.use("/bagian", connect_seque);
 x.use("/bagian", course_los);
 
