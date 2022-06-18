@@ -4,12 +4,12 @@ const express = require("express");
 const x = express();
 const jwt = require('jsonwebtoken')
 
-const cpmk = require('./cpmk');
+const cpmk = require('./backEnd/cpmk');
 const conn = require('./config/conn');
-const komponen_nilai = require('./komponen_nilai');
-const pertemuan_mingguan = require('./pertemuan_mingguan');
-const referensi = require('./referensi');
-const RPS = require('./RPS');
+const komponen_nilai = require('./backEnd/komponen_nilai');
+const pertemuan_mingguan = require('./backEnd/pertemuan_mingguan');
+const referensi = require('./backEnd/referensi');
+const RPS = require('./backEnd/RPS');
 const connect_seque = require('./CPMK_ORM/connect_seque');
 const course_los = require('./CPMK_ORM/course_los');
 
