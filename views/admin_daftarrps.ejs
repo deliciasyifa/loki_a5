@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
     <!-- Custom Stylesheet -->
-   
-    <link href="/public/css/style.css" rel="stylesheet" />
-  </head>
+    <!-- <link href="../css/style.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+  
 
   <body>
+   
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -131,39 +132,15 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">JSI100213</th>
-                            <td>Pemrograman Web</td>
-                            <td>
-                              <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">JSI1212213</th>
-                            <td>Dasar Dasar pemrograman</td>
-                            <td>
-                              <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">JSI1213113</th>
-                            <td>Pemrograman C++</td>
-                            <td>
-                              <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">JSI1203122</th>
-                            <td>Pemrograman Java</td>
-                            <td>
-                              <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">JSI1213123</th>
-                            <td>Pemrograman Berorientasi Objek</td>
-                            <td>
-                              <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
-                            </td>
+                           <% for (let user of users) { %>
+                            <tr>
+                              <th scope = "row"><%= user.kode_matkul %></th>
+                              <th scope = "row"><%= user.nama_matkul %></th>
+                              <th><td>
+                                <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
+                              </td></th>
+                            </tr>
+                           <%  } %>
                           </tr>
                         </tbody>
                       </table>

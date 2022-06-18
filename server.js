@@ -3,6 +3,27 @@ require("dotenv").config();
 const express = require("express");
 const x = express();
 const jwt = require("jsonwebtoken");
+const mysql = require("mysql");
+
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "dbpwebloki",
+  password: "",
+});
+
+db.connect((err) => {
+  if (err) throw err;
+  console.log("Database Connected");
+  const sql = "SELECT * FROM daftar_rps ";
+  db.query(sql, (err, result) => {
+    const users = JSON.parse(JSON.stringify(result));
+    console.log("HASIL DATABASE -> ", users);
+    x.get("/admindaftarrps", (req, res) => {
+      res.render("admin_daftarrps", { users: users });
+    });
+  });
+});
 
 const cpmk = require("./backEnd/cpmk");
 const conn = require("./config/conn");
@@ -50,13 +71,6 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
-
-//
-
-//route awal
-// x.get("/", (req, res) => {
-//   res.send("Welcome di Server JS");
-// });
 
 x.get("/", (req, res) => {
   res.render("admin_dash");
