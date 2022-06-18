@@ -15,6 +15,11 @@ const course_los = require('./CPMK_ORM/course_los');
 
 const port = 8000;
 
+
+//set view
+x.set("view engine", "ejs")
+x.set("views", "views")
+
 //jwt
 x.use(express.json())
 const posts=[
@@ -70,6 +75,11 @@ x.use("/bagian", cpmk);
 x.use("/bagian", conn);
 x.use("/bagian", connect_seque);
 x.use("/bagian", course_los);
+
+x.get("/admin", (req, res)=>
+{
+  res.render("admin_dash", {title:"Admin"})
+})
 
 
 
