@@ -1,60 +1,66 @@
-require('dotenv').config()
+require("dotenv").config();
 
 const express = require("express");
 const x = express();
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
-const cpmk = require('./backEnd/cpmk');
-const conn = require('./config/conn');
-const komponen_nilai = require('./backEnd/komponen_nilai');
-const pertemuan_mingguan = require('./backEnd/pertemuan_mingguan');
-const referensi = require('./backEnd/referensi');
-const RPS = require('./backEnd/RPS');
-const connect_seque = require('./CPMK_ORM/connect_seque');
-const course_los = require('./CPMK_ORM/course_los');
+const cpmk = require("./backEnd/cpmk");
+const conn = require("./config/conn");
+const komponen_nilai = require("./backEnd/komponen_nilai");
+const pertemuan_mingguan = require("./backEnd/pertemuan_mingguan");
+const referensi = require("./backEnd/referensi");
+const RPS = require("./backEnd/RPS");
+const connect_seque = require("./CPMK_ORM/connect_seque");
+const course_los = require("./CPMK_ORM/course_los");
 
 const port = 8000;
 
-
 //set view
-x.set("view engine", "ejs")
-x.set("views", "views")
+x.set("view engine", "ejs");
+x.set("views", "views");
 
 //jwt
-x.use(express.json())
-const posts=[
+x.use(express.json());
+const posts = [
   {
-    username: 'dina',
-    title: 'loki1'
+    username: "dina",
+    title: "loki1",
   },
   {
-    username: 'riska',
-    title: 'loki2'
-  }
-]
+    username: "riska",
+    title: "loki2",
+  },
+];
 
-x.get('/posts', authenticateToken,  (req, res)=> {
-  res.json(posts.filter(post=> post.username === req.user.name))
-})
+x.get("/posts", authenticateToken, (req, res) => {
+  res.json(posts.filter((post) => post.username === req.user.name));
+});
 
-function authenticateToken(req, res, next){
-  const authHeader = req.headers['authorization']
-  const token = authHeader && authHeader.split(' ')[1]
-  if(token == null) return res.sendStatus(401)
- 
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err,user )=>
-  {
-    if(err) return res.sendStatus(403)
-    req.user = user
-    next()
-  })
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token == null) return res.sendStatus(401);
+
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
 }
 
 //
 
 //route awal
-x.get("/",  (req, res) => {
-  res.send("Welcome di Server JS")
+// x.get("/", (req, res) => {
+//   res.send("Welcome di Server JS");
+// });
+
+x.get("/", (req, res) => {
+  res.render("admin_dash");
+});
+
+x.get("/admindaftarrps", (req, res) => {
+  res.render("admin_daftarrps.ejs");
 });
 
 //route untuk halaman login (fungsional 1)
@@ -76,16 +82,11 @@ x.use("/bagian", conn);
 x.use("/bagian", connect_seque);
 x.use("/bagian", course_los);
 
-x.get("/admin", (req, res)=>
-{
-  res.render("admin_dash", {title:"Admin"})
-})
-
-
+x.get("/admin", (req, res) => {
+  res.render("admin_dash", { title: "Admin" });
+});
 
 x.use("/public", express.static("public"));
-
-
 
 x.listen(port, () => {
   console.log(`Server berada pada port ${port}`);
