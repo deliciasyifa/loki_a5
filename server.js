@@ -39,9 +39,9 @@ const port = 8000;
 //set view
 x.set("view engine", "ejs");
 x.set("views", "views");
-// x.use(express.static("public"));
-// x.use("/css", express.static(__dirname + "public/css"));
-// x.use("/images", express.static(__dirname + "public/images"));
+x.use(express.static("public"));
+x.use("/css", express.static(__dirname + "public/css"));
+x.use("/images", express.static(__dirname + "public/images"));
 
 //jwt
 x.use(express.json());
