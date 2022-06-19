@@ -15,7 +15,18 @@ const course_los = require("./CPMK_ORM/course_los");
 
 const port = 8000;
 
-//set view
+//====================================================================================================
+//Koneksi Database
+const mysql = require("mysql");
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "loki",
+  password: "",
+});
+
+//====================================================================================================
+//Set view
 x.set("view engine", "ejs");
 x.set("views", "views");
 x.use(express.static("public"));
@@ -23,7 +34,7 @@ x.use("/css", express.static(__dirname + "public/css"));
 x.use("/images", express.static(__dirname + "public/images"));
 x.use("/public", express.static("public"));
 
-//jwt
+//JWT
 x.use(express.json());
 const posts = [
   {
@@ -53,26 +64,28 @@ function authenticateToken(req, res, next) {
 }
 
 //=====================================================================================
-
-//route untuk halaman login (fungsional 1)
+//ROUTE
+//Route untuk halaman login (fungsional 1)
 x.post("/login", (req, res) => {
   res.send("Ini adalah Halaman Login");
 });
 
-//route untuk halaman logout (fungsional 2)
+//Route untuk halaman logout (fungsional 2)
 x.get("/logout", (req, res) => {
   res.send("Ini merupakan halaman logout :)");
 });
 
+//Route untuk halaman dashboard admin
 x.get("/", (req, res) => {
   res.render("admin_dash", { title: "Admin" });
 });
 
+//Route untuk halaman daftar rps admin
 x.get("/admindaftarrps", (req, res) => {
   res.render("admin_daftarrps");
 });
 
-//dosen
+//Dosen
 x.get("/rps", (req, res) => {
   res.render("dosen/rps", { title: "Dosen" });
 });
