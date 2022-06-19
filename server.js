@@ -3,27 +3,6 @@ require("dotenv").config();
 const express = require("express");
 const x = express();
 const jwt = require("jsonwebtoken");
-// const mysql = require("mysql");
-
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   database: "dbpwebloki",
-//   password: "",
-// });
-
-// db.connect((err) => {
-//   if (err) throw err;
-//   console.log("Database Connected");
-//   const sql = "SELECT * FROM daftar_rps ";
-//   db.query(sql, (err, result) => {
-//     const users = JSON.parse(JSON.stringify(result));
-//     console.log("HASIL DATABASE -> ", users);
-//     x.get("/admindaftarrps", (req, res) => {
-//       res.render("admin_daftarrps", { users: users });
-//     });
-//   });
-// });
 
 const cpmk = require("./backEnd/cpmk");
 const conn = require("./config/conn");
@@ -42,6 +21,7 @@ x.set("views", "views");
 x.use(express.static("public"));
 x.use("/css", express.static(__dirname + "public/css"));
 x.use("/images", express.static(__dirname + "public/images"));
+x.use("/public", express.static("public"));
 
 //jwt
 x.use(express.json());
@@ -72,13 +52,7 @@ function authenticateToken(req, res, next) {
   });
 }
 
-x.get("/", (req, res) => {
-  res.render("admin_dash");
-});
-
-x.get("/admindaftarrps", (req, res) => {
-  res.render("admin_daftarrps");
-});
+//=====================================================================================
 
 //route untuk halaman login (fungsional 1)
 x.post("/login", (req, res) => {
@@ -90,6 +64,19 @@ x.get("/logout", (req, res) => {
   res.send("Ini merupakan halaman logout :)");
 });
 
+x.get("/", (req, res) => {
+  res.render("admin_dash", { title: "Admin" });
+});
+
+x.get("/admindaftarrps", (req, res) => {
+  res.render("admin_daftarrps");
+});
+
+//dosen
+x.get("/rps", (req, res) => {
+  res.render("dosen/rps", { title: "Dosen" });
+});
+
 x.use("/bagian", referensi);
 x.use("/bagian", komponen_nilai);
 x.use("/bagian", pertemuan_mingguan);
@@ -98,17 +85,6 @@ x.use("/bagian", cpmk);
 x.use("/bagian", conn);
 x.use("/bagian", connect_seque);
 x.use("/bagian", course_los);
-
-x.get("/admin", (req, res) => {
-  res.render("admin_dash", { title: "Admin" });
-});
-
-//dosen
-x.get("/rps", (req, res) => {
-  res.render("dosen/rps", { title: "Dosen" });
-});
-
-x.use("/public", express.static("public"));
 
 x.listen(port, () => {
   console.log(`Server berada pada port ${port}`);
