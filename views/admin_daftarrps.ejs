@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
     <!-- Custom Stylesheet -->
     <!-- <link href="../css/style.css" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link href="/public/css/style.css" rel="stylesheet" />
   
 
   <body>
@@ -105,60 +105,82 @@
       <!--**********************************
             Content body start
         ***********************************-->
-      <div class="content-body">
-        <div class="container-fluid mt-6">
-          <div class="row">
-            <div class="col-lg-12 col-sm-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="judul">Daftar RPS</div>
+        <div class="content-body">
+          <div class="container-fluid mt-6">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="judul">Daftar RPS</div>
+                      </div>
+                      <div class="col-lg-6" align="right">
+                        <a class="btn btn-success" href="admin_laporan.html">Laporan</a>
+                      </div>
                     </div>
-                    <div class="col-lg-6" align="right">
-                      <a class="btn btn-success" href="admin_laporan.html">Laporan</a>
-                    </div>
-                  </div>
-                  <div class="container-fluid mt-6">
-                    <div class="row"></div>
-                    <div class="col-lg-12 col-sm-12">
-                      <table class="table table-hover text-dark">
-                        <thead style="color: white" bgcolor="#10a395">
-                          <tr>
-                            <th scope="col">Kode Mata Kuliah</th>
-                            <th scope="col">Nama Mata Kuliah</th>
-                            <th scope="col">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                           <% for (let user of users) { %>
+                    <div class="container-fluid mt-6">
+                      <div class="row"></div>
+                      <div class="col-lg-12 col-sm-12">
+                        <table class="table table-hover text-dark">
+                          <thead style="color: white" bgcolor="#10a395">
                             <tr>
-                              <th scope = "row"><%= user.kode_matkul %></th>
-                              <th scope = "row"><%= user.nama_matkul %></th>
-                              <th><td>
-                                <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
-                              </td></th>
+                              <th scope="col">Kode Mata Kuliah</th>
+                              <th scope="col">Nama Mata Kuliah</th>
+                              <th scope="col">Aksi</th>
                             </tr>
-                           <%  } %>
-                          </tr>
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">JSI100213</th>
+                              <td>Pemrograman Web</td>
+                              <td>
+                                <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">JSI1212213</th>
+                              <td>Dasar Dasar pemrograman</td>
+                              <td>
+                                <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">JSI1213113</th>
+                              <td>Pemrograman C++</td>
+                              <td>
+                                <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">JSI1203122</th>
+                              <td>Pemrograman Java</td>
+                              <td>
+                                <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">JSI1213123</th>
+                              <td>Pemrograman Berorientasi Objek</td>
+                              <td>
+                                <a class="btn btn-warning" href="admin_contributor.html">Contributor</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-                  
+                    
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        
-                
+          </div>           
                 
       <!--**********************************
             Content body end
