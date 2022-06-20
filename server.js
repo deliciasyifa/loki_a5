@@ -17,18 +17,18 @@ const port = 8000;
 
 //====================================================================================================
 //Koneksi Database
-const mysql = require("mysql");
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "loki",
-  password: "",
-});
+// const mysql = require("mysql");
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   database: "loki",
+//   password: "",
+// });
 
-db.connect((err) => {
-  if (err) throw err;
-  console.log("Database Connected");
-});
+// db.connect((err) => {
+//   if (err) throw err;
+//   console.log("Database Connected");
+// });
 
 //====================================================================================================
 //Set view
