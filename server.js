@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const x = express();
 const jwt = require("jsonwebtoken");
+
 const path = require("path")
 const cookieParser = require("cookie-parser")
 const logger = require("morgan")
@@ -28,6 +29,7 @@ const logger = require("morgan")
 //   });
 // });
 
+
 const cpmk = require("./backEnd/cpmk");
 const conn = require("./config/conn");
 const flash = require('express-flash');
@@ -43,8 +45,25 @@ const dosenrps = require('./routes/dosen');
 
 const port = 8000;
 
-//set view
+//====================================================================================================
+//Koneksi Database
+const mysql = require("mysql");
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "loki",
+  password: "",
+});
+
+db.connect((err) => {
+  if (err) throw err;
+  console.log("Database Connected");
+});
+
+//====================================================================================================
+//Set view
 x.set("view engine", "ejs");
+
 x.set("views", path.join(__dirname, "views") );
 
 x.use((req, res, next)=>{
@@ -74,7 +93,14 @@ x.use('/listrps', dosenrps);
 // x.use("/css", express.static(__dirname + "public/css"));
 // x.use("/images", express.static(__dirname + "public/images"));
 
-//jwt
+x.set("views", "views");
+x.use(express.static("public"));
+x.use("/css", express.static(__dirname + "public/css"));
+x.use("/images", express.static(__dirname + "public/images"));
+x.use("/public", express.static("public"));
+
+
+//JWT
 x.use(express.json());
 const posts = [
   {
@@ -103,22 +129,36 @@ function authenticateToken(req, res, next) {
   });
 }
 
-x.get("/", (req, res) => {
-  res.render("admin_dash");
-});
-
-x.get("/admindaftarrps", (req, res) => {
-  res.render("admin_daftarrps");
-});
-
-//route untuk halaman login (fungsional 1)
+//=====================================================================================
+//ROUTE
+//Route untuk halaman login (fungsional 1)
 x.post("/login", (req, res) => {
   res.send("Ini adalah Halaman Login");
 });
 
-//route untuk halaman logout (fungsional 2)
+//Route untuk halaman logout (fungsional 2)
 x.get("/logout", (req, res) => {
   res.send("Ini merupakan halaman logout :)");
+});
+
+//Route untuk Landing Page
+x.get("/", (req, res) => {
+  res.render("landing_page", { title: "Index" });
+});
+
+//Route untuk halaman dashboard admin
+x.get("/admindash", (req, res) => {
+  res.render("admin_dash", { title: "Admin" });
+});
+
+//Route untuk halaman daftar rps admin
+x.get("/admindaftarrps", (req, res) => {
+  res.render("admin_daftarrps");
+});
+
+//Dosen
+x.get("/rps", (req, res) => {
+  res.render("dosen/rps", { title: "Dosen" });
 });
 
 x.use("/bagian", referensi);
@@ -129,17 +169,6 @@ x.use("/bagian", cpmk);
 // x.use("/bagian", conn);
 x.use("/bagian", connect_seque);
 x.use("/bagian", course_los);
-
-x.get("/admin", (req, res) => {
-  res.render("admin_dash", { title: "Admin" });
-});
-
-//dosen
-x.get("/rps", (req, res) => {
-  res.render("dosen/rps", { title: "Dosen" });
-});
-
-x.use("/public", express.static("public"));
 
 x.listen(port, () => {
   console.log(`Server berada pada port ${port}`);
