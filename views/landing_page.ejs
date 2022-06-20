@@ -83,6 +83,15 @@
                               </tr>
                             </thead>
                             <tbody>
+                              <% for(var i=0; i < data.length; i++ ) { %>
+                                <tr>
+                                  <td><%= data[i].code %></td>
+                                  <td><%= data[i].name %></td>
+                                  <td>
+                                    <button type="button" class="btn btn-primary">Lihat</button>
+                                  </td>
+                                </tr>
+                                <% } %>
                               
                             </tfoot>
                           </table>

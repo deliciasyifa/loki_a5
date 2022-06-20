@@ -18,6 +18,7 @@ const RPS = require("./backEnd/RPS");
 const connect_seque = require("./CPMK_ORM/connect_seque");
 const course_los = require("./CPMK_ORM/course_los");
 const dosenrps = require("./routes/dosen");
+const index = require("./routes/index");
 
 const port = 8000;
 
@@ -52,6 +53,7 @@ x.use(express.static(path.join(__dirname, "public")));
 
 //route
 x.use("/listrps", dosenrps);
+x.use("/", index);
 
 //JWT
 x.use(express.json());
