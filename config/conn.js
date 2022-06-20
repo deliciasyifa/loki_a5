@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password:"",
-  database:"cobapweb"
+  database:"loki"
 });
 
 connection.connect((err) => {

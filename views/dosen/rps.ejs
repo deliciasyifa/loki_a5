@@ -129,15 +129,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>JSI162121</td>
-                    <td>Analisis dan Visualisasi Data</td>
-                    <td>
-                      <button type="button" class="btn btn-primary">Detail</button>
-                      <button type="button" class="btn btn-warning">Edit</button>
-                      <a type="button" class="btn btn-danger" style="color: white"> <img src="/public/trash3-fill.svg" alt="" onclick="return confirm('Anda yakin mau menghapus item ini ?')" />Hapus </a>
-                    </td>
-                  </tr>
+                  <% for(var i=0; i < data.length; i++ ) { %>
+                    <tr>
+                      <td><%= data[i].code %></td>
+                      <td><%= data[i].name %></td>
+                      <td>
+                        <button type="button" class="btn btn-primary">Detail</button>
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <a type="button" class="btn btn-danger" style="color: white"> <img src="/public/trash3-fill.svg" alt="" onclick="return confirm('Anda yakin mau menghapus item ini ?')" />Hapus </a>
+                      </td>
+                    </tr>
+                    <% } %>
                 </tbody>
               </table>
             </div>
