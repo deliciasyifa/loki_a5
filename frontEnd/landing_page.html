@@ -4,16 +4,15 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>e-RPS Universitas Andalas </title>
+    <title>Daftar RPS</title>
     <!-- Favicon icon -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
     <!-- Custom Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style_dm.css" rel="stylesheet" />
   </head>
 
   <body>
-
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -27,7 +26,7 @@
             <b class="logo-abbr"><img src="images/logo.png" alt="" /> </b>
             <span class="logo-compact"><img src="./images/logo-compact.png" alt="" /></span>
             <span class="brand-title">
-              <img src="images/logo-text.png" alt="" />
+              <img href="dashboard.html" src="images/logo-text.png" alt="" />
             </span>
           </a>
         </div>
@@ -39,18 +38,18 @@
       <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">
-          <div class="header-content clearfix">
-            <div class="nav-control">
-              <div class="hamburger">
-                <span class="toggle-icon"><i class="icon-menu"></i></span>
-              </div>
-            </div>
-            <div class="header-right">
-              <a class='btn btn-list' href="login.html" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25)">Login</a>
+      <div class="header">
+        <div class="header-content clearfix">
+          <div class="nav-control">
+            <div class="hamburger">
+              <span class="toggle-icon"><i class="icon-menu"></i></span>
             </div>
           </div>
+          <div class="header-right">
+            <a class="btn btn-list" href="login.html" style="box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25)">Login</a>
+          </div>
         </div>
+      </div>
       <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -62,12 +61,11 @@
         <div class="nk-nav-scroll">
           <ul class="metismenu" id="menu">
             <li class="nav-label">Dashboard</li>
-            <li>
+            <!-- <li>
               <a href="dashboard.html"> <i class="fa fa-home fa-2x"></i><span class="nav-text">Home</span> </a>
-            </li>
+            </li> -->
             <li>
               <a href="Daftar RPS.html" aria-expanded="false"> <i class="fa fa-file-text fa-5x"></i><span class="nav-text">RPS</span> </a>
-              
             </li>
           </ul>
         </div>
@@ -79,30 +77,107 @@
       <!--**********************************
             Content body start
         ***********************************-->
-      <div class="content-body">
-        <div class="container-fluid mt-6">
-          <div class="row">
-            <div class="col-lg-6 col-sm-12">
-                <div class="card gradient-1">
-                    <div class="card-body">
-                        <h3 class="card-title text-white">Selamat Datang (Nama Mahasiswa)!</h3>
+      <div>
+        <div class="content-body">
+          <div class="container-fluid mt-6">
+            <div class="card-body">
+              <h3 style="margin-top: 10px; margin-left: 10px; text-align: center">Rencana Pembelajaran Semester</h3>
+              <div class="row">
+                <div class="col-12" style="margin-top: 10px">
+                  <div class="card2 mb-4" style="border-radius: 10px">
+                    <div class="card-body" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25); border-radius: 10px">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <nav aria-label="breadcrumb">
+                            <!-- <ol class="breadcrumb">
+                              <li class="me-3">
+                                <p>Search</p>
+                              </li>
+                              <li class="me-3" aria-current="page">
+                                <input type="text" align="right" id="mySearch" onkeyup="myFunction()" />
+                              </li>
+                            </ol> -->
+                            <!-- <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="Masukkan Nama/Kode Mata Kuliah" aria-label="Search" />
+                              <button class="btn btn-dark" type="submit">Cari</button>
+                            </form> -->
+                          </nav>
+                        </div>
+                        <table id="myTable" class="table table-bordered table-hover">
+                          <thead>
+                            <tr align="center" bgcolor="#10a395" style="color: #ffffff">
+                              <th>No</th>
+                              <th>Kode Mata Kuliah</th>
+                              <th>Nama Mata Kuliah</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr align="center" style="color: #353535; font-weight: 100; width: 100%">
+                              <th>1</th>
+                              <th>JSI100213</th>
+                              <th>Pemograman Web</th>
+                              <th width="280px">
+                                <a class="btn btn-list" href="detail rps.html" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25)">Lihat</a>
+                              </th>
+                            </tr>
+                            <tr align="center" style="color: #353535; font-weight: 100; width: 100%">
+                              <th>2</th>
+                              <th>JSI100214</th>
+                              <th>Dasar - Dasar Pemrograman</th>
+                              <th width="280px">
+                                <a class="btn btn-list" href="detail rps.html" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25)">Lihat</a>
+                              </th>
+                            </tr>
+                            <tr align="center" style="color: #353535; font-weight: 100; width: 100%">
+                              <th>3</th>
+                              <th>JSI100215</th>
+                              <th>Pemograman Berorientasi Objek</th>
+                              <th width="280px">
+                                <a class="btn btn-list" href="detail rps.html" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25)">Lihat</a>
+                              </th>
+                            </tr>
+                            <tr align="center" style="color: #353535; font-weight: 100; width: 100%">
+                              <th>3</th>
+                              <th>JSI100216</th>
+                              <th>Data Mining</th>
+                              <th width="280px">
+                                <a class="btn btn-list" href="detail rps.html" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25)">Lihat</a>
+                              </th>
+                            </tr>
+                            <tr align="center" style="color: #353535; font-weight: 100; width: 100%">
+                              <th>3</th>
+                              <th>JSI100217</th>
+                              <th>Sistem Penunjang Keputusan</th>
+                              <th width="280px">
+                                <a class="btn btn-list" href="detail rps.html" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25)">Lihat</a>
+                              </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
+
       <!--**********************************
-            Content body end
-        ***********************************-->
+              Content body end
+          ***********************************-->
 
       <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
-          <div class="copyright">
-            <p>Copyright &copy; Designed & Developed by Kelompok 5 2022</p>
-          </div>
+
+      <div class="footer">
+        <div class="copyright">
+          <p>Copyright &copy; Designed & Developed by Kelompok 5 2022</p>
         </div>
+      </div>
       <!--**********************************
             Footer end
         ***********************************-->
@@ -114,6 +189,61 @@
     <!--**********************************
         Scripts
     ***********************************-->
+
+    <script>
+      $(document).ready(function () {
+        $("#myTable").DataTable();
+      });
+    </script>
+    <script>
+      $(function () {
+        $(".chosen-select").chosen();
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        const showNavbar = (toggleId, navId, bodyId, headerId) => {
+          const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId),
+            bodypd = document.getElementById(bodyId),
+            headerpd = document.getElementById(headerId);
+
+          // Validate that all variables exist
+          if (toggle && nav && bodypd && headerpd) {
+            toggle.addEventListener("click", () => {
+              // show navbar
+              nav.classList.toggle("show");
+              // change icon
+              toggle.classList.toggle("bx-x");
+              // add padding to body
+              bodypd.classList.toggle("body-pd");
+              // add padding to header
+              headerpd.classList.toggle("body-pd");
+            });
+          }
+        };
+
+        showNavbar("header-toggle", "nav-bar", "body-pd", "header");
+
+        /*===== LINK ACTIVE =====*/
+        const linkColor = document.querySelectorAll(".nav_link");
+
+        function colorLink() {
+          if (linkColor) {
+            linkColor.forEach((l) => l.classList.remove("active"));
+            this.classList.add("active");
+          }
+        }
+        linkColor.forEach((l) => l.addEventListener("click", colorLink));
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#tabel-data").DataTable();
+      });
+    </script>
+
     <script src="plugins/common/common.min.js"></script>
     <script src="js/custom.min.js"></script>
     <script src="js/settings.js"></script>
