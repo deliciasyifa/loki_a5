@@ -3,6 +3,9 @@ require("dotenv").config();
 const express = require("express");
 const x = express();
 const jwt = require("jsonwebtoken");
+const path = require("path")
+const cookieParser = require("cookie-parser")
+const logger = require("morgan")
 // const mysql = require("mysql");
 
 // const db = mysql.createConnection({
@@ -27,18 +30,46 @@ const jwt = require("jsonwebtoken");
 
 const cpmk = require("./backEnd/cpmk");
 const conn = require("./config/conn");
+const flash = require('express-flash');
+const session = require('express-session');
+const methodOverride = require('method-override');
 const komponen_nilai = require("./backEnd/komponen_nilai");
 const pertemuan_mingguan = require("./backEnd/pertemuan_mingguan");
 const referensi = require("./backEnd/referensi");
 const RPS = require("./backEnd/RPS");
 const connect_seque = require("./CPMK_ORM/connect_seque");
 const course_los = require("./CPMK_ORM/course_los");
+const dosenrps = require('./routes/dosen');
 
 const port = 8000;
 
 //set view
 x.set("view engine", "ejs");
-x.set("views", "views");
+x.set("views", path.join(__dirname, "views") );
+
+x.use((req, res, next)=>{
+  req.db = conn;
+  next();
+})
+x.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {maxAge: 60000}
+}))
+x.use(flash());
+x.use(methodOverride("_method"));
+
+x.use(logger('dev'));
+x.use(express.json());
+x.use(express.urlencoded({extended:false}));
+x.use(cookieParser());
+x.use(express.static(path.join(__dirname, 'public')));
+
+
+//route
+x.use('/listrps', dosenrps);
+
 // x.use(express.static("public"));
 // x.use("/css", express.static(__dirname + "public/css"));
 // x.use("/images", express.static(__dirname + "public/images"));
@@ -95,7 +126,7 @@ x.use("/bagian", komponen_nilai);
 x.use("/bagian", pertemuan_mingguan);
 x.use("/bagian", RPS);
 x.use("/bagian", cpmk);
-x.use("/bagian", conn);
+// x.use("/bagian", conn);
 x.use("/bagian", connect_seque);
 x.use("/bagian", course_los);
 
