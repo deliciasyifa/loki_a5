@@ -3,54 +3,55 @@ require("dotenv").config();
 const express = require("express");
 const x = express();
 const jwt = require("jsonwebtoken");
-const path = require("path")
-const cookieParser = require("cookie-parser")
-const logger = require("morgan")
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 const cpmk = require("./backEnd/cpmk");
 const conn = require("./config/conn");
-const flash = require('express-flash');
-const session = require('express-session');
-const methodOverride = require('method-override');
+const flash = require("express-flash");
+const session = require("express-session");
+const methodOverride = require("method-override");
 const komponen_nilai = require("./backEnd/komponen_nilai");
 const pertemuan_mingguan = require("./backEnd/pertemuan_mingguan");
 const referensi = require("./backEnd/referensi");
 const RPS = require("./backEnd/RPS");
 const connect_seque = require("./CPMK_ORM/connect_seque");
 const course_los = require("./CPMK_ORM/course_los");
-const dosenrps = require('./routes/dosen');
+const dosenrps = require("./routes/dosen");
 
 const port = 8000;
 
-
 //Set view
 x.set("view engine", "ejs");
-x.set("views", path.join(__dirname, "views") );
+x.set("views", path.join(__dirname, "views"));
 x.use(express.static("public"));
 x.use("/css", express.static(__dirname + "public/css"));
 x.use("/images", express.static(__dirname + "public/images"));
 x.use("/public", express.static("public"));
 
-x.use((req, res, next)=>{
+x.use((req, res, next) => {
   req.db = conn;
   next();
-})
-x.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: true,
-  cookie: {maxAge: 60000}
-}))
+});
+x.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 },
+  })
+);
 x.use(flash());
 x.use(methodOverride("_method"));
 
-x.use(logger('dev'));
+x.use(logger("dev"));
 x.use(express.json());
-x.use(express.urlencoded({extended:false}));
+x.use(express.urlencoded({ extended: false }));
 x.use(cookieParser());
-x.use(express.static(path.join(__dirname, 'public')));
+x.use(express.static(path.join(__dirname, "public")));
 
 //route
-x.use('/listrps', dosenrps);
+x.use("/listrps", dosenrps);
 
 //JWT
 x.use(express.json());
