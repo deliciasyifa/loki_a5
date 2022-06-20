@@ -25,6 +25,11 @@ const db = mysql.createConnection({
   password: "",
 });
 
+db.connect((err) => {
+  if (err) throw err;
+  console.log("Database Connected");
+});
+
 //====================================================================================================
 //Set view
 x.set("view engine", "ejs");
