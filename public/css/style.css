@@ -12162,7 +12162,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   position: absolute;
 }
 
-.sidebar-right {
+/* .sidebar-right {
   right: -15.625rem;
   position: fixed;
   top: 0;
@@ -12172,7 +12172,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   margin-top: 5rem;
   transition: all 0.5s ease-in-out;
   padding-bottom: 1.875rem;
-}
+} */
 [direction="rtl"] .sidebar-right .slimScrollDiv {
   overflow: visible !important;
 }
@@ -12191,7 +12191,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   font-size: 1.3125rem;
   border-radius: 50px;
 }
-.sidebar-right .sidebar-right-trigger span {
+/* .sidebar-right .sidebar-right-trigger span {
   display: inline-block;
   animation: bounce 0.7s infinite ease-in-out;
 }
@@ -12205,7 +12205,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   top: 0;
   background-color: #fff;
   z-index: 2;
-}
+} */
 [data-theme-version="dark"] .sidebar-right .nav-tabs {
   background-color: #162336;
 }
