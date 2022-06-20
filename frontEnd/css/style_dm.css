@@ -27,6 +27,16 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 .gradient-1,
 .dropdown-mega-menu .ext-link.link-1 a,
 .morris-hover,
+
+.btn-list{
+  
+  border-radius: 8px;
+  width: 108px;
+  height: 40px;
+  background-color: rgb(255, 255, 255); 
+  color:#353535; 
+  border:#353535 1px solid;
+}
 .datamaps-hoverover {
   background-image: linear-gradient(230deg, #60b3d7f0, #10a395);
   /* background-image: linear-gradient(230deg, #60b3d7f0, #10a395); */

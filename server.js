@@ -75,8 +75,13 @@ x.get("/logout", (req, res) => {
   res.send("Ini merupakan halaman logout :)");
 });
 
-//Route untuk halaman dashboard admin
+//Route untuk Landing Page
 x.get("/", (req, res) => {
+  res.render("landing_page", { title: "Index" });
+});
+
+//Route untuk halaman dashboard admin
+x.get("/admindash", (req, res) => {
   res.render("admin_dash", { title: "Admin" });
 });
 
