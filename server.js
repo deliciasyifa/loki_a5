@@ -7,27 +7,7 @@ const jwt = require("jsonwebtoken");
 const path = require("path")
 const cookieParser = require("cookie-parser")
 const logger = require("morgan")
-// const mysql = require("mysql");
 
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   database: "dbpwebloki",
-//   password: "",
-// });
-
-// db.connect((err) => {
-//   if (err) throw err;
-//   console.log("Database Connected");
-//   const sql = "SELECT * FROM daftar_rps ";
-//   db.query(sql, (err, result) => {
-//     const users = JSON.parse(JSON.stringify(result));
-//     console.log("HASIL DATABASE -> ", users);
-//     x.get("/admindaftarrps", (req, res) => {
-//       res.render("admin_daftarrps", { users: users });
-//     });
-//   });
-// });
 
 
 const cpmk = require("./backEnd/cpmk");
@@ -46,21 +26,7 @@ const dosenrps = require('./routes/dosen');
 const port = 8000;
 
 //====================================================================================================
-//Koneksi Database
-const mysql = require("mysql");
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "loki",
-  password: "",
-});
 
-db.connect((err) => {
-  if (err) throw err;
-  console.log("Database Connected");
-});
-
-//====================================================================================================
 //Set view
 x.set("view engine", "ejs");
 
@@ -89,9 +55,7 @@ x.use(express.static(path.join(__dirname, 'public')));
 //route
 x.use('/listrps', dosenrps);
 
-// x.use(express.static("public"));
-// x.use("/css", express.static(__dirname + "public/css"));
-// x.use("/images", express.static(__dirname + "public/images"));
+
 
 x.set("views", "views");
 x.use(express.static("public"));
@@ -157,9 +121,9 @@ x.get("/admindaftarrps", (req, res) => {
 });
 
 //Dosen
-x.get("/rps", (req, res) => {
-  res.render("dosen/rps", { title: "Dosen" });
-});
+// x.get("/rps", (req, res) => {
+//   res.render("dosen/rps", { title: "Dosen" });
+// });
 
 x.use("/bagian", referensi);
 x.use("/bagian", komponen_nilai);

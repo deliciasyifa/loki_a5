@@ -15,5 +15,3 @@ module.exports = {
         })
     }
 }
-// dah lah ndk paham
-//gak deng paham dikit dikit
