@@ -102,7 +102,7 @@ x.get("/", (req, res) => {
 });
 
 //Route untuk halaman dashboard admin
-x.get("/admindash", (req, res) => {
+x.get("/admin", (req, res) => {
   res.render("admin_dash", { title: "Admin" });
 });
 
