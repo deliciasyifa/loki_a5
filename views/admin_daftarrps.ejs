@@ -133,41 +133,15 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <th scope="row">JSI100213</th>
-                              <td>Pemrograman Web</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1212213</th>
-                              <td>Dasar Dasar pemrograman</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1213113</th>
-                              <td>Pemrograman C++</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1203122</th>
-                              <td>Pemrograman Java</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1213123</th>
-                              <td>Pemrograman Berorientasi Objek</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
+                            <% for(var i=0; i < data.length; i++ ) { %>
+                              <tr>
+                                <td><%= data[i].code %></td>
+                                <td><%= data[i].name %></td>
+                                <td>
+                                  <a class="btn btn-warning" href="/admincontributor">Contributor</a>
+                                </td>
+                              </tr>
+                              <% } %>
                           </tbody>
                         </table>
                       </div>

@@ -19,6 +19,7 @@ const connect_seque = require("./CPMK_ORM/connect_seque");
 const course_los = require("./CPMK_ORM/course_los");
 const dosenrps = require("./routes/dosen");
 const index = require("./routes/index");
+const admin = require("./routes/admin");
 
 const port = 8000;
 
@@ -54,6 +55,7 @@ x.use(express.static(path.join(__dirname, "public")));
 //route
 x.use("/listrps", dosenrps);
 x.use("/", index);
+x.use("/admindaftarrps", admin);
 
 //JWT
 x.use(express.json());
@@ -108,12 +110,12 @@ x.get("/admin", (req, res) => {
 
 //Route untuk halaman daftar rps admin
 x.get("/admindaftarrps", (req, res) => {
-  res.render("admin_daftarrps");
+  res.render("admin_daftarrps", { title: "Admin" });
 });
 
 //Route untuk halaman daftar rps admin
 x.get("/admincontributor", (req, res) => {
-  res.render("admin_contributor");
+  res.render("admin_contributor", { title: "Admin" });
 });
 
 //Route untuk halaman daftar rps admin

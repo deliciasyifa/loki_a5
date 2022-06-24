@@ -1,6 +1,6 @@
 //import model
 
-const index = require("../models/RpsModel");
+const index = require("../models/indexModel");
 
 //export modul
 module.exports = {
