@@ -87,8 +87,8 @@ function authenticateToken(req, res, next) {
 //=====================================================================================
 //ROUTE
 //Route untuk halaman login (fungsional 1)
-x.post("/login", (req, res) => {
-  res.send("Ini adalah Halaman Login");
+x.get("/login", (req, res) => {
+  res.render("login", { title: "login" });
 });
 
 //Route untuk halaman logout (fungsional 2)
@@ -109,6 +109,16 @@ x.get("/admin", (req, res) => {
 //Route untuk halaman daftar rps admin
 x.get("/admindaftarrps", (req, res) => {
   res.render("admin_daftarrps");
+});
+
+//Route untuk halaman daftar rps admin
+x.get("/admincontributor", (req, res) => {
+  res.render("admin_contributor");
+});
+
+//Route untuk halaman daftar rps admin
+x.get("/admintambahcontributor", (req, res) => {
+  res.render("admin_tambahcontributor");
 });
 
 //Dosen

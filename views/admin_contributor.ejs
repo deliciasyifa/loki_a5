@@ -4,17 +4,15 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Admin - Daftar RPS</title>
+    <title>Tambah Contributor</title>
     <!-- Favicon icon -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
     <!-- Custom Stylesheet -->
-    <!-- <link href="../css/style.css" rel="stylesheet" /> -->
     <link href="/public/css/style.css" rel="stylesheet" />
-  
+  </head>
 
   <body>
-   
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -28,7 +26,7 @@
             <b class="logo-abbr"><img src="images/logo.png" alt="" /> </b>
             <span class="logo-compact"><img src="./images/logo-compact.png" alt="" /></span>
             <span class="brand-title">
-              <img href="/" src="images/logo-text.png" alt="" />
+              <img src="images/logo-text.png" alt="" />
             </span>
           </a>
         </div>
@@ -58,13 +56,9 @@
                 <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                   <div class="dropdown-content-body">
                     <ul>
-                      <li>
-                        <a href="/admin"><i class="icon-user"></i> <span>Profile</span></a>
-                      </li>
-
                       <hr class="my-2" />
                       <li>
-                        <a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a>
+                        <a href="/login"><i class="icon-key"></i> <span>Logout</span></a>
                       </li>
                     </ul>
                   </div>
@@ -107,83 +101,87 @@
       <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
-          <div class="container-fluid mt-6">
-            <div class="row">
-              <div class="col-lg-12 col-sm-12">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="judul">Daftar RPS</div>
-                      </div>
-                      <div class="col-lg-6" align="right">
-                        <a class="btn btn-success" href="admin_laporan.html">Laporan</a>
-                      </div>
-                    </div>
-                    <div class="container-fluid mt-6">
-                      <div class="row"></div>
-                      <div class="col-lg-12 col-sm-12">
-                        <table class="table table-hover text-dark">
-                          <thead style="color: white" bgcolor="#10a395">
-                            <tr>
-                              <th scope="col">Kode Mata Kuliah</th>
-                              <th scope="col">Nama Mata Kuliah</th>
-                              <th scope="col">Aksi</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">JSI100213</th>
-                              <td>Pemrograman Web</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1212213</th>
-                              <td>Dasar Dasar pemrograman</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1213113</th>
-                              <td>Pemrograman C++</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1203122</th>
-                              <td>Pemrograman Java</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">JSI1213123</th>
-                              <td>Pemrograman Berorientasi Objek</td>
-                              <td>
-                                <a class="btn btn-warning" href="/admincontributor">Contributor</a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+      <div class="content-body">
+        <div class="container-fluid mt-6">
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <div class="card" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);border-radius: 10px;">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="judul">Contributor</div>
+                      <div class="sjudul">JSI62125-Pemrograman Web</div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                <div class="container-fluid mt-6" >
+                  <ol class="breadcrumb" style="background-color: #ffffff;"> 
+                    <li class="me-3" aria-current="page">
+                        <div class="form-group" style="margin-bottom:20px">
+                            <select style="padding:5px 10px; width:100%;" class="chosen-select" name="" required>
+                            <option value="">Silahkan pilih dosen</option>;
+                            <option value="B001">Husnil Kamil, M.T</option>;
+                            <option value="B002">Ricky AKbar, M.Kom</option>;
+                            <option value="B003">Adi Arga Arifnur, M.Kom</option>;
+                            <option value="B004">Jefril Rahmadoni, M.Kom</option>;
+                            </select>
+                        </div>
+                    </li>
+                    <li class="me-3" aria-current="page">
+                        <a class="btn btn-list" align="left" href="/admintambahcontributor" style="margin-left: 15px; color: white; background-color:#10a395; border:#10a395 2px solid;box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25);border-radius: 10px;" >Tambah</a>
+                    </li>
+                    </ol>
+                  <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Masukkan Nama/Kode Mata Kuliah" aria-label="Search">
+                    <button class="btn btn-yoi" type="submit">Search</button>
+                  </form> -->
+                  <br>
+                  <div class="row"></div>
+                  <div class="col-lg-12 col-sm-12">
+                  <table id="myTable" class="table table-bordered table-hover" >
+                    <thead >
+                      <tr align="center" bgcolor='#10a395' style="color:#ffffff">
+                          <th>kode DOsen</th>
+                          <th>Nama Dosen</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr align="center" style="color:#353535; font-weight:100; width:100%;">
+                        <th scope="row">xxxxx</th>
+                        <td>Husnil Kamil, M.T.</td>
+                        <td width="400px">
+                          <a class="btn btn-danger" href="admin_contributor.html"onclick="return confirm('Anda yakin mau menghapus item ini ?')" >Delete</a>
+                        </td>
+                      </tr>
+                      <tr align="center" style="color:#353535; font-weight:100; width:100%;">
+                        <th scope="row">yyyyy</th>
+                        <td>Hasdi Putra, M.T.</td>
+                        <td width="400px">
+                          <a class="btn btn-danger" href="admin_contributor.html" onclick="return confirm('Anda yakin mau menghapus item ini ?')">Delete</a>
+                        </td>
+                      </tr>
+                      <tr align="center" style="color:#353535; font-weight:100; width:100%;">
+                        <th scope="row">zzzzz</th>
+                        <td>Surya Afnarius, Ph.D</td>
+                        <td width="400px">
+                          <a class="btn btn-danger" href="admin_contributor.html" onclick="return confirm('Anda yakin mau menghapus item ini ?')">Delete</a>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+                  
+                  <div class="container-fluid mt-6" align="left">
+                  <div class="row"></div>
+                  <div class="col-lg-12 col-sm-12">
+                    <a class="btn btn-list"  style="box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25);border-radius: 10px;" href="admin_daftar rps.html">Back </a>
                     
                   </div>
                 </div>
               </div>
             </div>
-          </div>           
-                
+          </div>
+        </div>
+      </div>
       <!--**********************************
             Content body end
         ***********************************-->
@@ -193,7 +191,7 @@
         ***********************************-->
       <div class="footer">
         <div class="copyright">
-          <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Kelompok 5</a> 2022</p>
+          <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Kelompok 5</a> 2018</p>
         </div>
       </div>
       <!--**********************************
