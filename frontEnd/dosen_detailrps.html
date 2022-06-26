@@ -124,57 +124,73 @@
                                       <table class="table">
                                         <thead>
                                           <tr>
-                                            <th scope="col">CP - </br>Prodi</th>
-                                            <th scope="col">Deskripsi</th>
+                                           
+                                            <th scope="col">CPMK</th>
                             
                                           </tr>
                                         </thead>
                                         <tbody>
                                           <tr>
-                                            <th scope="row">CP-1</th>
-                                            <td>Mengidentifikasi, memformulasikan dan memecahkan permasalahan kebutuhan informasi dari suatu organisasi​</td>
+                                          
+                                            <td>Mengidentifikasi, memformulasikan dan memecahkan permasalahan kebutuhan informasi dari suatu organisasi​ (CP-1, CP-2)</td>
                                             
                                           </tr>
                                           <tr>
-                                            <th scope="row">CP-2</th>
-                                            <td>Mengintegrasikan solusi berbasis teknologi informasi secara efektif pada suatu organisasi​</td>
+                                           
+                                            <td>Mengintegrasikan solusi berbasis teknologi informasi secara efektif pada suatu organisasi (CP-1, CP-2)​</td>
                                             
                                           </tr>
                                           <tr>
-                                            <th scope="row">CP-3</th>
-                                            <td>	Menerapkan konsep-konsep dasar dalam merencanakan Sistem Informasi, merancang Sistem Informasi, membangun Sistem Informasi, mengoperasikan Sistem Informasi, dan​ mengevaluasi Sistem Informasi</td>
+                                        
+                                            <td>	Menerapkan konsep-konsep dasar dalam merencanakan Sistem Informasi, merancang Sistem Informasi, membangun Sistem Informasi, mengoperasikan Sistem Informasi, dan​ mengevaluasi Sistem Informasi (CP-1, CP-2)</td>
                                          
                                           </tr>
                                         </tbody>
                                       </table>
 
-                                      <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">CP - </br>Matkul</th>
-                                            <th scope="col">Deskripsi</th>
-                            
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">CP-1</th>
-                                            <td>Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CP-1, CP-2)​</td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">CP-2</th>
-                                            <td>Mahasiswa mampu menggunakan salah satu technology stack untuk membangun aplikasi berbasis web (CP-1, CP-2)</td>
-                                            
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">CP-3</th>
-                                            <td>Mahasiswa mampu menggunakan pemograman asynchronous . (CP-2, CP-3)</td>
-                                         
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <a class="btn btn-primary" href="dosen_lihatrps.html">Edit</a>
+                                    
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Tambah
+                                      </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6 class="modal-title" id="exampleModalLabel">CP - Program Studi</h6>
+                                                <form>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Kode (CP - )</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="message-text" class="col-form-label">Deskripsi</label>
+                                                      <textarea class="form-control" id="message-text"></textarea>
+                                                    </div>
+                                                  </form>
+                                                  <h6 class="modal-title" id="exampleModalLabel">CP - Mata Kuliah</h6>
+                                                <form>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Kode</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="message-text" class="col-form-label">Deskripsi</label>
+                                                      <textarea class="form-control" id="message-text"></textarea>
+                                                    </div>
+                                                  </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                 
                                     </div>
                                   </div>
@@ -199,7 +215,6 @@
                                           <tr>
                                             <th scope="row">Intruction Ruby 5.0</th>
                                             <td>Ruby adalah bahasa pemrograman dinamis berbasis skrip yang berorientasi objek. Tujuan dari ruby adalah menggabungkan kelebihan dari semua bahasa-bahasa pemrograman skrip yang ada di dunia</td>
-                                            
                                           </tr>
                                           <tr>
                                             <th scope="row">Calculus</th>
@@ -208,7 +223,36 @@
                                           </tr>
                                         </tbody>
                                       </table>
-                                      <a class="btn btn-primary" href="dosen_lihatrps.html">Edit</a>
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalRef">
+                                        Tambah
+                                      </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="ModalRef" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Referensi</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Nama Referensi</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="message-text" class="col-form-label">Deskripsi</label>
+                                                      <textarea class="form-control" id="message-text"></textarea>
+                                                    </div>
+                                                  </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
                                     </div>
                                   </div>
@@ -226,6 +270,10 @@
                                             <th scope="col">Pengalaman</br> belajar Mahasiswa</th>
                                             <th scope="col">Kriteria Penilaian</th>
                                             <th scope="col">Bobot Penilaian (%)</th>
+                                      
+                                            
+               
+                                            
                             
                                           </tr>
                                         </thead>
@@ -246,7 +294,52 @@
                               
                                         </tbody>
                                       </table>
-                                      <a class="btn btn-primary" href="dosen_lihatrps.html">Edit</a>
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalPert">
+                                        Tambah
+                                      </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="ModalPert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Pertemuan Mingguan</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="input-group mb-3">
+                                                    <span class="input-group-text">Minggu Ke</span>
+                                                    <input type="text" class="form-control"  aria-label="Username">
+                                                    <input type="text" class="form-control"  placeholder="Waktu" aria-label="Server">
+                                                  </div>
+                                                  
+                                                  <div class="input-group">
+                                                    <span class="input-group-text">Materi Ajar</span>
+                                                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                                                  </div>
+                                                  <label for="basic-url" class="form-label">Kriteria Nilai</label>
+                                                  <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                                  </div>
+                                                  
+                                                  <div class="input-group mb-3">
+                                                    <span class="input-group-text">Bobot</span>
+                                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                
+                                                  </div>
+                                
+                                                  
+                                                  <div class="input-group">
+                                                    <span class="input-group-text">Kemampuan Akhir </span>
+                                                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                                                  </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
                                     </div>
                                   </div>
@@ -287,12 +380,60 @@
                                           </tr>
                                         </tbody>
                                       </table>
-                                      <a class="btn btn-primary" href="dosen_lihatrps.html">Edit</a>
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTugas">
+                                        Tambah
+                                      </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="ModalTugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <form>
+                                                    <h6 class="modal-title" id="exampleModalLabel">Tugas</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">Kuis</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">UTS</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">UAS</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">Kehadiran</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                </form>
+                                                   
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
                                     </div>
 
                                   </div>
-                                  <a class="btn btn-primary" href="dosen_tambahrps.html">Tambah RPS</a>
+                                  
                                   <a class="btn btn-primary" href="../files/RPS (1)-dikonversi.pdf">Cetak RPS</a>
                               
 
