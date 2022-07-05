@@ -1,18 +1,23 @@
-module.exports = {
-  fetchData: (db, callback) => {
-    db.query("SELECT * FROM course_plans", callback);
-  },
+// daftar controller
+const indexmodel = {};
 
-  getById: (db, id, callback) => {
-    db.query("SELECT * FROM course_plans WHERE id = ", id, callback);
-  },
-  insertData: (db, data, callback) => {
-    db.query("INSERT INTO course_plans SET ?", data, callback);
-  },
-  updateData: (db, id, data, callback) => {
-    db.query("UPDATE course_plans SET ? WHERE id = ", id, data, callback);
-  },
-  deleteData: (db, id, callback) => {
-    db.query("DELETE FROM course_plans WHERE id = ", id, callback);
-  },
-};
+indexmodel.course_lo_details = require('./course_lo_details.js')
+indexmodel.course_los = require('./course_los.js')
+indexmodel.course_plan_assessments = require('./course_plan_assessments.js')
+indexmodel.course_plan_detail_assessments = require('./course_plan_detail_assessments.js')
+indexmodel.course_plan_detail_outcomes = require('./course_plan_detail_outcomes.js')
+indexmodel.course_plan_detail_refs = require('./course_plan_detail_refs.js')
+indexmodel.course_plan_lecturers = require('./course_plan_lecturers.js')
+indexmodel.course_plan_references = require('./course_plan_references.js')
+indexmodel.course_plans_details = require('./course_plans_details.js')
+indexmodel.course_plans = require('./course_plans.js')
+indexmodel.course_requirements = require('./course_requirements.js')
+indexmodel.courses = require('./courses.js')
+indexmodel.curricula = require('./curricula.js')
+indexmodel.curriculum_los = require('./curriculum_los.js')
+indexmodel.curriculum_profiles = require('./curriculum_profiles.js')
+indexmodel.lecturers = require('./lecturers.js')
+indexmodel.users = require('./users.js')
+indexmodel.dbconfig = require('./dbconfig.js')
+
+module.exports = indexmodel;

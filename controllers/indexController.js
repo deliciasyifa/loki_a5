@@ -1,17 +1,9 @@
-//import model
+// daftar controller
+const indexcontroller = {};
 
-const index = require("../models/indexModel");
+indexcontroller.admin = require("./admin");
+indexcontroller.mahasiswa = require("./mahasiswa");
+indexcontroller.dosen = require("./dosen");
+indexcontroller.users = require("./users");
 
-//export modul
-module.exports = {
-  landing_page: (req, res) => {
-    index.fetchData(req.db, (err, rows) => {
-      if (err) {
-        req.flash("error", "salah!!");
-        res.render("landing_page", { data: "" });
-      } else {
-        res.render("landing_page", { data: rows });
-      }
-    });
-  },
-};
+module.exports = indexcontroller;
