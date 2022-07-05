@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>e-RPS Universitas Andalas </title>
+    <!-- Favicon icon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+      <!--**********************************
+            Nav header start
+        ***********************************-->
+      <div class="nav-header">
+        <div class="brand-logo">
+          <a href="index.html">
+            <b class="logo-abbr"><img src="images/logo.png" alt="" /> </b>
+            <span class="logo-compact"><img src="./images/logo-compact.png" alt="" /></span>
+            <span class="brand-title">
+              <img src="images/logo-text.png" alt="" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <!--**********************************
+            Nav header end
+        ***********************************-->
+
+      <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+          <div class="header-content clearfix">
+            <div class="nav-control">
+              <div class="hamburger">
+                <span class="toggle-icon"><i class="icon-menu"></i></span>
+              </div>
+            </div>
+  
+            <div class="header-right">
+              <ul class="clearfix">
+                <li class="icons dropdown">
+                  <div class="user-img c-pointer position-relative" data-toggle="dropdown">
+                    <span class="activity active"></span>
+                    <img src="images/user/1.png" height="40" width="40" alt="" />
+                  </div>
+                  <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                    <div class="dropdown-content-body">
+                      <ul>
+                        <hr class="my-2" />
+                        <% if (role=="T"||role=="D") { %>
+                        <li>
+                          <form method="POST" action="/auth/logout">
+                            <!-- <a><i class="icon-key"></i> <span>Logout</span></a> -->
+                            <button type="submit" class="dropdown-item"><i  class="icon-mid bi bi-box-arrow-left me-2"></i> Keluar</button>
+                          </form>
+                        </li>
+                        <%  %>                       
+                      </ul>
+                      <% } else {%>
+                        <a href="/auth/login" class="btn btn-primary rounded-pill">Login</a>
+                    <% } %> 
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+      <!--**********************************
+            Sidebar start
+        ***********************************-->
+      <div class="nk-sidebar">
+        <div class="nk-nav-scroll">
+          <ul class="metismenu" id="menu">
+            <li class="nav-label">Dashboard</li>
+            <li>
+              <a href="dosen_dashboard.html"> <i class="fa fa-home fa-2x"></i><span class="nav-text">Home</span> </a>
+            </li>
+            <li>
+              <a class="has-arrow" href="javascript:void()" aria-expanded="false"> <i class="fa fa-file-text fa-5x" ></i><span class="nav-text">RPS</span> </a>
+              <ul aria-expanded="false">
+                <li><a href="/dosen/detailmatkul">List Mata Kuliah</a></li>
+                <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+      <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+          <div class="container-fluid mt-6">
+            <div class="row">
+
+               
+                    <div class = "container">
+                        <div class = "row text-center">
+                            <div class = "col mt-4">
+                                <h2>Rencana Pembelajaran Semester (RPS) </h2>
+                                <h3><%= rps.name %> </h3>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 mb-3 mt-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                      <h5 class="card-title">CPMK</h5>
+                                      <p class="card-text">Campaian Pembelajaran Mata Kuliah </p>
+                                      <table class="table">
+                                        <thead>
+                                          <tr>
+                                           
+                                            <th scope="col">Kode</th>
+                                            <th scope="col">CP Mata Kuliah</th>
+                                            <th scope="col">Aksi</th>
+                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <% cpmk.forEach((x,index) => { %>
+                                            <tr>
+                                            <td><%= x.code %></td>
+                                            <td><%= x.name %></td>
+                                            <td> 
+                                              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<%=index+1%>">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                              </svg>
+                                              </button>
+                                              <!-- Modal hapus cpmk -->
+                                              <div class="modal fade" id="hapus<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2 class="h6 modal-title">Peringatan!</h2>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <form action="/dosen/hapuscpmk" method="post">
+                                                            <div class="modal-body">
+                                                                <p>Apakah Anda Yakin ingin Menghapus?</p>
+                                                                <input type="hidden" name="id" value="<%=x.id%>">
+                                                                <input type="hidden" name="parent_id" value="<%=x.parent_id%>">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Batal</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                </div>
+
+
+                                              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<%=index+1%>">Edit
+                                              </button>
+
+                                            <!-- edit modal -->
+                                            <div class="modal fade" id="edit<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                      <h6 class="modal-title" id="exampleModalLabel">CPMK</h6>
+
+                                                      <form action="/dosen/editcpmk" method="post" >
+                                                    
+                                                          <input type="hidden" name="id" value="<%= x.id %>">
+                                                          <div class="mb-3">
+                                                            <label for="recipient-name" class="col-form-label">Edit code</label>
+                                                            <input type="text" name="code" class="form-control" name="code"placeholder="<%= x.code %>" value="<%= x.code %>" required>
+                                                          </div>
+                                                          <div class="mb-3">
+                                                            <label for="recipient-name" class="col-form-label">Edit name</label>
+                                                            <textarea class="form-control" name="name" placeholder="<%= x.name %>" name="name" required><%= x.name %></textarea>
+                                                          </div>
+                                                          
+                                                      
+                                                        <div class="modal-footer">
+                                                          <button type="submit" class="btn btn-primary">Save</button>
+                                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                        
+                                                      </form>
+
+                                                  </div>
+                                                
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <!-- edit end -->
+
+                                          </td>
+                                          </tr>
+                                          <% })%>
+                                        </tbody>
+                                      </table>
+
+                                    
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Tambah
+                                      </button>
+
+                                     
+
+                                    <!-- Modal Tambah CPMK -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6 class="modal-title" id="exampleModalLabel">CPMK</h6>
+                                                <form action="/dosen/tambahcpmk" method="post" >
+                                                  <input type="hidden" name="course_plan_id" value="<%= rps.id %>">
+                                                  <input type="hidden" name="type" value="1">
+                                                  <input type="hidden" name="parent_id" value="1">
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">code</label>
+                                                      <input type="text"  name="code"  class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">name</label>
+                                                      <textarea  name="name"  class="form-control" id="recipient-name"></textarea>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="submit" class="btn btn-primary">Save</button>
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </form>
+
+                                                
+                                                
+                                            </div>
+                                           
+                                          </div>
+                                        </div>
+                                    </div>
+                                
+                                    </div>
+
+                                    <!-- cp prodi -->
+
+                                    <!-- edit modal -->
+
+                                    <!-- <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                              <h6 class="modal-title" id="exampleModalLabel">CPMK</h6>
+                                              <form action="/dosen/editcpmk" method="post" >
+                                                <% cpmk.forEach((cc, index) => { %>
+                                                  <input type="hidden" name="id" value="<%= cc.id %>">
+                                                  <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Edit code</label>
+                                                    <input type="text" name="code" class="form-control" id="recipient-name" placeholder="<%= cc.code %>" required> <%= cc.code %>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Edit name</label>
+                                                    <textarea class="form-control" id="recipient-name" placeholder="<%= cc.name %>" name="name" required><%= cc.name %></textarea>
+                                                  </div>
+                                                  
+                                                <% })%>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                                </form>
+                                              
+                                          </div>
+                                         
+                                        </div>
+                                      </div>
+                                    </div> -->
+                                    <!-- edit end -->
+
+                                    <div class="card-body">
+                                      <h5 class="card-title">CPP</h5>
+                                      <p class="card-text">Campaian Pembelajaran Program Studi </p>
+                                      <table class="table">
+                                        <thead>
+                                          <tr>
+                                           
+                                            <th scope="col">Kode</th>
+                                            <th scope="col">CP Program</th>
+                                            <th scope="col">Aksi</th>
+                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <% cpp.forEach((x,index) => { %>
+                                            <tr>
+                                            <td><%= x.name %></td>
+                                            <td><%= x.description %></td>
+                                            <td> 
+                                              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus<%=index+1%>">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                              </svg>
+                                              </button>
+                                              <!-- Modal hapus cpp -->
+                                              <div class="modal fade" id="hapus<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2 class="h6 modal-title">Peringatan!</h2>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <form action="/dosen/hapuscpp" method="post">
+                                                            <div class="modal-body">
+                                                                <p>Apakah Anda Yakin ingin Menghapus?</p>
+                                                                <input type="hidden" name="id" value="<%=x.id%>">
+                                                                <!-- <input type="hidden" name="parent_id" value="<%=x.parent_id%>"> -->
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Batal</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                              </div>
+
+
+                                              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<%=index+1%>">Edit
+                                              </button>
+
+                                            <!-- edit modal -->
+                                            <div class="modal fade" id="edit<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                      <h6 class="modal-title" id="exampleModalLabel">CPMK</h6>
+
+                                                      <form action="/dosen/editcpmk" method="post" >
+                                                    
+                                                          <input type="hidden" name="id" value="<%= x.id %>">
+                                                          <div class="mb-3">
+                                                            <label for="recipient-name" class="col-form-label">Edit code</label>
+                                                            <input type="text" name="code" class="form-control" name="code"placeholder="<%= x.code %>" value="<%= x.code %>" required>
+                                                          </div>
+                                                          <div class="mb-3">
+                                                            <label for="recipient-name" class="col-form-label">Edit name</label>
+                                                            <textarea class="form-control" name="name" placeholder="<%= x.name %>" name="name" required><%= x.name %></textarea>
+                                                          </div>
+                                                          
+                                                      
+                                                        <div class="modal-footer">
+                                                          <button type="submit" class="btn btn-primary">Save</button>
+                                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                        
+                                                      </form>
+
+                                                  </div>
+                                                
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <!-- edit end -->
+
+                                          </td>
+                                          </tr>
+                                          <% })%>
+                                        </tbody>
+                                      </table>
+
+                                    
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalcpp">
+                                        Tambah
+                                      </button>
+                                      <!-- MOdal TAmbah CPP -->
+                                      <div class="modal fade" id="exampleModalcpp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6 class="modal-title" id="exampleModalLabel">CPP</h6>
+                                                <form action="/dosen/tambahcpp" method="post" >
+                                                  <input type="hidden" name="id" value="<%= cpp.id %>">
+                                                  
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Name</label>
+                                                      <input type="text"  name="name"  class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">active</label>
+                                                      <input type="text"  name="active"  class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">year_start</label>
+                                                      <input type="number"  name="year_start"  class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">year_end</label>
+                                                      <input type="number"  name="year_end"  class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">description</label>
+                                                      <textarea name="description"  class="form-control" id="recipient-name"></textarea>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                      <button type="submit" class="btn btn-primary">Save</button>
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                     
+                                                    </div>
+                                                   
+                                                </form>
+                                                
+                                            </div>
+                                           
+                                          </div>
+                                        </div>
+                                    </div>
+
+                                  </div>
+
+                                  <!-- referensi -->
+                                  <div class="card">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Referensi</h5>
+                                      <p class="card-text">Rujukan Buku, Artikel, dan Bahan Ajar </p>
+                                      <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Author</th>
+                                            <th scope="col">Publisher</th>
+                                            <th scope="col">Year</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Aksi</th>
+                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          
+                                          <% referensi.forEach((x, index) => { %>
+                                            <tr>
+                                            <th><%= x.title %></th>
+                                            <td><%= x.author %></td>
+                                            <td><%= x.publisher %></td>
+                                            <td><%= x.year %></td>
+                                            <td><%= x.description %></td>
+                                            <td>
+                                              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusref<%=index+1%>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                                </svg>
+                                                </button>
+                                                <!-- Modal hapus referensi -->
+                                                <div class="modal fade" id="hapusref<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                                      <div class="modal-content">
+                                                          <div class="modal-header">
+                                                              <h2 class="h6 modal-title">Peringatan!</h2>
+                                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                          </div>
+                                                          <form action="/dosen/hapusreferensi" method="post">
+                                                              <div class="modal-body">
+                                                                  <p>Apakah Anda Yakin ingin Menghapus?</p>
+                                                                  <input type="hidden" name="id" value="<%=x.id%>">
+                                                                  <input type="hidden" name="parent_id" value="<%=x.parent_id%>">
+                                                              </div>
+                                                              <div class="modal-footer">
+                                                                  <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                  <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Batal</button>
+                                                              </div>
+                                                          </form>
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                                <!-- end -->
+                                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editref<%=index+1%>">Edit</button>
+  
+                                              <!-- edit modal -->
+                                              <div class="modal fade" id="editref<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel">Referensi</h5>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h6 class="modal-title" id="exampleModalLabel"> Data Referensi</h6>
+                                                        <form action="/dosen/editReferensi" method="post" >
+                                                        <input type="hidden" name="id" value="<%= x.id %>">
+                                                        <label>Judul </label>
+                                                        <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" placeholder="<%= x.title %>" name="title" required value="<%= x.title %>">
+                                                        </div>
+                                                        <label>Pengarang </label>
+                                                        <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" placeholder="<%= x.author %>" name="author" required value="<%= x.author %>">
+                                                        </div>
+                                                        <label>Penerbit </label>
+                                                        <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" placeholder="<%= x.publisher %>" name="publisher" required  value="<%= x.publisher %>">
+                                                        </div>
+                                                        <label>Tahun </label>
+                                                        <div class="input-group mb-3">
+                                                        <input type="number" class="form-control" placeholder="<%= x.year %>" name="year" required value="<%= x.year %>">
+                                                        </div>
+                                                        <label>Description </label>
+                                                        <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" placeholder="<%= x.description %>" name="description" required value="<%= x.description %>">
+                                                        </div>
+                                                          <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary">Save</button>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                          </div>
+                                                          
+                                                        </form>
+  
+                                                    </div>
+                                                  
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!-- edit end -->
+                                               </td>
+                                            <tr>
+                                          <% })%>
+                                        </tbody>
+                                      </table>
+                                      <!-- Button Modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah-referensi">Tambah Referensi</button>
+                            <!-- Modal Content -->
+                            <div class="modal fade" id="tambah-referensi" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="h6 modal-title">Tambah Referensi</h2>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <form action="/dosen/tambahReferensi" method="post">
+                                        <div class="modal-body">
+                                            <input type="hidden" name="course_plan_id" value="<%= rps.id %>">
+                                            <label>Judul </label>
+                                            <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Masukkan Judul" name="title" required>
+                                            </div>
+                                            <label>Pengarang </label>
+                                            <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Masukkan Nama Pengarang" name="author" required>
+                                            </div>
+                                            <label>Penerbit </label>
+                                            <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Masukkan Nama Penerbit" name="publisher" required>
+                                            </div>
+                                            <label>Tahun </label>
+                                            <div class="input-group mb-3">
+                                            <input type="number" class="form-control" placeholder="Masukkan Tahun diterbitkan" name="year" required>
+                                            </div>
+                                            <label>Deskripsi </label>
+                                            <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Masukkan Tahun diterbitkan" name="description" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
+                                            <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                            
+                                      
+
+                                   <!-- PERTEMUAN MINGGUAN -->
+                                   <div class="card">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Pertemuan Mingguan</h5>
+                                      <p class="card-text">Metode, Materi, dan Kemampuan Akhir </p>
+                                      <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Minggu ke-</th>
+                                            <th scope="col">Materi</th>
+                                            <th scope="col">Metode Pembelajaran</th>
+                                            <th scope="col">Pengalaman Belajar Mahasiswa</th>
+                                            <th scope="col">Aksi</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <% prtmingguan.forEach((x, index) => { %>
+                                            <tr>
+                                            <td><%= x.week %></th>
+                                            <td><%= x.material %></td>
+                                            <td><%= x.method %></td>
+                                            <td><%= x.student_experience %></td>
+                                            <td><button type="button" class="btn btn-secondary"  data-bs-target="#hapusmingguan<%=index+1%>">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                              </svg>
+                                            </button>
+                                           <!-- Modal hapus pertemuan mingguan -->
+                                           <div class="modal fade" id="hapusmingguan<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="h6 modal-title">Peringatan!</h2>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <form action="/dosen/hapusmingguan" method="post">
+                                                        <div class="modal-body">
+                                                            <p>Apakah Anda Yakin ingin Menghapus?</p>
+                                                            <input type="hidden" name="id" value="<%=x.id%>">
+        
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                                            <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Batal</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                          </div>
+
+                                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editmingguan<%=index+1%>">Edit
+                                          </button>
+
+                                        <!-- edit modal -->
+                                        <div class="modal fade" id="editmingguan<%=index+1%>" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Pertemuan Mingguan</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                                  <h6 class="modal-title" id="exampleModalLabel">Edit Pertemuan Mingguan</h6>
+
+                                                  <form action="/dosen/editmingguan" method="post" >
+                                                
+                                                      <input type="hidden" name="id" value="<%= x.id %>">
+                    
+                                                      <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label">Minggu ke-</label>
+                                                        
+                                                          <select class="form-control" name="week">
+                                                          <% for (var i = 1; i <=16;i++){%> 
+                                                          <option value="<%=i%>"><%=i%></option>
+                                                          <%}%>
+                                                          </select>
+                                                          
+                                                      </div>
+                                                      <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label">Materi</label>
+                                                        <textarea class="form-control" name="material" placeholder="<%= x.material %>" required><%= x.material %></textarea>
+                                                      </div>
+                                                      <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label">Metode Pembelajaran</label>
+                                                        <div class="input-group mb-3">
+                                                          <select class="form-control" name="method">
+                                                              <option value="Project Based">Project Based</option>
+                                                              <option value="Cased Based">Cased Based</option>
+                                                              </select>
+                                                        </div>
+                                                      </div>
+                                                      <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label">Pengalaman Belajar Mahasiswa</label>
+                                                        <textarea class="form-control" name="student_experience" placeholder="<%= x.student_experience %>" name="name" required><%= x.student_experience %></textarea>
+                                                      </div>
+                                                      
+                                                  
+                                                    <div class="modal-footer">
+                                                      <button type="submit" class="btn btn-primary">Save</button>
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                    
+                                                  </form>
+
+                                              </div>
+                                            
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- edit end -->
+                                          </td>
+                                            </tr>
+                                          <% })%>
+                                        </tbody>
+                                      </table>
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaltambahmingguan">
+                                        Tambah
+                                      </button>
+
+                                    <!-- Modal Tambah Pertemuan MIngguan -->
+                                    <div class="modal fade" id="modaltambahmingguan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Pertemuan Mingguan</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                              <h6 class="modal-title" id="exampleModalLabel">Tambah Pertemuan Mingguan</h6>
+                                              <form action="/dosen/tambahmingguan" method="post" >
+                                                <input type="hidden" name="course_plan_id" value="<%= prtmingguan.id %>">
+                                                <!-- <input type="hidden" name="type" value="1">
+                                                <input type="hidden" name="parent_id" value="1"> -->
+                                                  <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Minggu ke-</label>
+                                                    
+                                                      <select class="form-control" name="week">
+                                                      <% for (var i = 1; i <=16;i++){%> 
+                                                      <option value="<%=i%>"><%=i%></option>
+                                                      <%}%>
+                                                      </select>
+                                                      
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Materi</label>
+                                                    <textarea  name="material"  class="form-control" id="recipient-name"></textarea>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Metode Pembelajaran</label>
+                                                    <div class="input-group mb-3">
+                                                      <select class="form-control" name="method">
+                                                          <option value="Project Based">Project Based</option>
+                                                          <option value="Cased Based">Cased Based</option>
+                                                          </select>
+                                                  </div>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Pengalaman Belajar Mahasiswa</label>
+                                                    <textarea  name="student_experience"  class="form-control" id="recipient-name"></textarea>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                  </div>
+                                              </form>   
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="card">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Komponen Penilaian</h5>
+                                      <p class="card-text"> </p>
+                                      <table class="table ml-5">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">name</th>
+                                            <th scope="col">percentage</th>
+                                            <th scope="col">Aksi</th>
+                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <% komponenpenilaian.forEach((x) => { %>
+                                            <tr>
+                                              <th scope="row"><%= x.name %></th>
+                                              <td><%= x.percentage %></td>
+                                              <td><button type="button" class="btn btn-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                                              </button>
+                                            
+                                            </td>
+                                            </tr>
+                                          <% })%>
+                                          <tr>
+                                        </tbody>
+                                      </table>
+                                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTugas">
+                                        Tambah
+                                      </button>
+                                      <a class="btn btn-primary" href="">Edit</a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="ModalTugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Capaian Pembelajaran</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                               
+                                                <form>
+                                                    <h6 class="modal-title" id="exampleModalLabel">Tugas</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">Kuis</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">UTS</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">UAS</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                    <h6 class="modal-title" id="exampleModalLabel">Kehadiran</h6>
+                                                    <div class="mb-3">
+                                                      <label for="recipient-name" class="col-form-label">Bobot (%)</label>
+                                                      <input type="text" class="form-control" id="recipient-name">
+                                                    </div>
+                                                </form>
+                                                   
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+
+                                  </div>
+                                  
+                                  <a class="btn btn-success" href="">Simpan</a>
+                                  <a class="btn btn-primary" href="../files/RPS (1)-dikonversi.pdf">Cetak RPS</a>
+                                 
+                              
+
+
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                    
+                    </div>
+              
+             
+            </div>
+          </div>
+        </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+    <script src="./js/dashboard/dashboard-1.js"></script>
+  </body>
+</html>

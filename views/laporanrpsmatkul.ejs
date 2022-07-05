@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Laporan</title>
+    <!-- Favicon icon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <!-- Custom Stylesheet -->
+    <link href="css/style_dm.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+      <!--**********************************
+            Nav header start
+        ***********************************-->
+      <div class="nav-header">
+        <div class="brand-logo">
+          <a href="admin_dashboard.html">
+            <b class="logo-abbr"><img src="images/logo.png" alt="" /> </b>
+            <span class="logo-compact"><img src="./images/logo-compact.png" alt="" /></span>
+            <span class="brand-title">
+              <img src="images/logo-text.png" alt="" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <!--**********************************
+            Nav header end
+        ***********************************-->
+
+      <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+          <div class="header-content clearfix">
+            <div class="nav-control">
+              <div class="hamburger">
+                <span class="toggle-icon"><i class="icon-menu"></i></span>
+              </div>
+            </div>
+  
+            <div class="header-right">
+              <ul class="clearfix">
+                <li class="icons dropdown">
+                  <div class="user-img c-pointer position-relative" data-toggle="dropdown">
+                    <span class="activity active"></span>
+                    <img src="images/user/1.png" height="40" width="40" alt="" />
+                  </div>
+                  <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                    <div class="dropdown-content-body">
+                      <ul>
+                        <hr class="my-2" />
+                        <% if (role=="T"||role=="D") { %>
+                        <li>
+                          <form method="POST" action="/auth/logout">
+                            <!-- <a><i class="icon-key"></i> <span>Logout</span></a> -->
+                            <button type="submit" class="dropdown-item"><i  class="icon-mid bi bi-box-arrow-left me-2"></i> Keluar</button>
+                          </form>
+                        </li>
+                        <%  %>                       
+                      </ul>
+                      <% } else {%>
+                        <a href="/auth/login" class="btn btn-primary rounded-pill">Login</a>
+                    <% } %> 
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+      <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">
+          <div class="nk-nav-scroll">
+            <ul class="metismenu" id="menu">
+              <li class="nav-label">Dashboard</li>
+              <li>
+                <a href="admin_dashboard.html"> <i class="fa fa-home fa-2x"></i><span class="nav-text">Home</span> </a>
+              </li>
+              <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false"> <i class="fa fa-file-text fa-5x"></i><span class="nav-text">RPS</span> </a>
+                <ul aria-expanded="false">
+                  <li><a href="admin_daftar rps.html">Daftar RPS</a></li>
+                  <li><a href="admin_petaCPMK.html">Peta CPMK-CPL</a></li>
+                  <li><a href="admin_PersentaseRPS.html">Persentase RPS</a></li>
+  
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+      <!--**********************************
+            Content body start
+        ***********************************-->
+      <div class="content-body">
+        <div class="container-fluid mt-6">
+          <h3 style="margin-top:10px; margin-left:10px;margin-bottom: 10px;">Laporan Admin</h3>
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <div class="card">
+                <div class="card-body" style="box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);border-radius: 10px;" align="center" >
+                  <img class="img" style="width:8%; margin:30px 30px;" src="https://lp3m.unand.ac.id/seminar/tsadmin/todakimage/logo.png"/>
+                  <h3>Laporan</h3>
+                  <br>
+                  <table border="0" cellpadding="0" cellspacing="0" id="sheet0" class="sheet0 gridlines">
+                      <col class="col0">
+                      <col class="col1">
+                      <col class="col2">
+                      <col class="col3">
+                      <col class="col4">
+                      <col class="col5">
+                      <col class="col6">
+                      <col class="col7">
+                      <col class="col8">
+                      <col class="col9">
+                      <col class="col10">
+                      <col class="col11">
+                      <col class="col12">
+                      <tr class="row0">
+                          <td class="column0 style151 s style153" rowspan="4">
+                              <img class="img" style="width:50%; margin:30px 0px;" src="https://lp3m.unand.ac.id/seminar/tsadmin/todakimage/logo.png"/>
+                          </td>
+                          <td class="column1 style6 s style7" colspan="12">RENCANA PEMBELAJARAN SEMESTER (RPS)</td>
+                        </tr>
+                        <tr class="row1">
+                          <td class="column1 style8 s style9" colspan="12">PROGRAM STUDI : Sistem Informasi</td>
+                        </tr>
+                        <tr class="row2">
+                          <td class="column1 style8 s style9" colspan="12">FAKULTAS /PPs: Teknologi Informasi</td>
+                        </tr>
+                        <tr class="row3">
+                          <td class="column1 style11 s style12" colspan="12">UNIVERSITAS ANDALAS</td>
+                        </tr>
+                        <tr class="row4">
+                          <td class="column0 style148 s style150" colspan="5">MATA KULIAH</td>
+                          <td class="column5 style148 s style150" colspan="2">KODE</td>
+                          <td class="column10 style141 s" colspan="3">BOBOT (SKS)</td>
+                          <td class="column12 style141 s" colspan="3">REVISI</td>
+                        </tr>
+                        <tr class="row5">
+                          <td class="column0 style17 s style19" colspan="5"></td>
+                          <td class="column5 style17 null style19" colspan="2"></td>
+                          <td class="column10 style3 n" colspan="3">3</td>
+                          <td class="column12 style4 null" colspan="3"></td>
+                        </tr>
+                      <!-- <tr class="row9">
+                          <td class="column0 style22 s style27" colspan="2" rowspan="12">Capaian Pembelajaran (CP)</td>
+                          <td class="column2 style13 s style15" colspan="4">CP Program Studi         </td>
+                          <td class="column6 style37 null style39" colspan="7"></td>
+                        </tr> -->
+                        <!-- <tr class="row10">
+                          <td class="column2 style2 s">CP-1</td>
+                          <td class="column3 style41 s style43" colspan="10">Mengidentifikasi, memformulasikan dan memecahkan  permasalahan kebutuhan informasi dari suatu organisasi​</td>
+                        </tr>
+                        <tr class="row11">
+                          <td class="column2 style2 s">CP-2</td>
+                          <td class="column3 style41 s style43" colspan="10">Mengintegrasikan solusi berbasis teknologi informasi secara efektif pada suatu organisasi​</td>
+                        </tr>
+                        <tr class="row12">
+                          <td class="column2 style2 s">CP-3</td>
+                          <td class="column3 style41 s style43" colspan="10">Menerapkan konsep-konsep dasar dalam merencanakan Sistem Informasi, merancang Sistem Informasi, membangun Sistem Informasi, mengoperasikan Sistem Informasi, dan​ mengevaluasi Sistem Informasi </td>
+                        </tr>
+                        <tr class="row13">
+                          <td class="column2 style44 s style46" colspan="4">CP Mata Kuliah             </td>
+                          <td class="column6 style37 null style39" colspan="7"></td>
+                        </tr>
+                        <tr class="row14">
+                          <td class="column2 style2 n">1</td>
+                          <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web (CP-1, CP-2)</td>
+                        </tr>
+                        <tr class="row15">
+                          <td class="column2 style2 n">2</td>
+                          <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan salah satu technology stack untuk membangun aplikasi berbasis web (CP-1, CP-2)</td>
+                        </tr>
+                        <tr class="row16">
+                          <td class="column2 style2 n">3</td>
+                          <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan pemograman asynchronous . (CP-2, CP-3)</td>
+                        </tr>
+                        <tr class="row17">
+                          <td class="column2 style2 n">4</td>
+                          <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menerapkan keamanan untuk situs web . (CP-2, CP-3)</td>
+                        </tr>
+                        <tr class="row18">
+                          <td class="column2 style2 n">5</td>
+                          <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu menggunakan dan mendesain format data JSON. (CP-2, CP-3)</td>
+                        </tr>
+                        <tr class="row19">
+                          <td class="column2 style2 n">6</td>
+                          <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu deploy aplikasi web ke internet. (CP-2)</td>
+                        </tr>
+                        <tr class="row20">
+                          <td class="column2 style2 n">7</td>
+                          <td class="column3 style41 s style43" colspan="10">Mahasiswa mampu mendemonstrasikan keterampilan bekerja sama dengan tim (CP-3)</td>
+                        </tr> -->
+                        <tr class="row4">
+                          <td class="column0 style148 s style150" colspan="14">CPL</td>
+                        </tr>
+                        <tr class="row5">
+                          <td class="column0 style6 style59" colspan="14">CPL :</td>
+                         
+                        </tr>
+                        <tr class="row4">
+                          <td class="column0 style148 s style150" colspan="14">CPMK</td>
+                        </tr>
+                        <tr class="row5">
+                          <td class="column0 style6 style59" colspan="14">CPMK :</td>
+                        </tr>
+                        <tr class="row4">
+                          <td class="column0 style148 s style150" colspan="14">PERSENTASE MATA KULIAH</td>
+                        </tr>
+                        <tr class="row5">
+                          <td class="column0 style6 style59" colspan="14">Project Based Learning :</td>
+                        </tr>
+                        <tr class="row6">
+                          <td class="column0 style6 s style59" colspan="14">Case Based Method :</td>
+                        </tr>
+                  
+                      
+                  </table>
+                  <div class="col-12" style="margin-top: 10px;">
+                      <a class="btn btn-lap" align="left" href="/admin/rps" style=" color: white; background-color:#10a395; border:#10a395 2px solid;box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25);border-radius: 10px;" >Back</a>
+                      <a class="btn btn-lap" onClick="window.open('/admin/printlaporan')" align="right" href="admin/printlaporan" style="margin-left:30px; color: white; background-color:#10a395; border:#10a395 2px solid;box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25);border-radius: 10px;" >Cetak</a>
+                     
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--**********************************
+            Content body end
+        ***********************************-->
+
+      <!--**********************************
+            Footer start
+        ***********************************-->
+      <div class="footer">
+        <div class="copyright">
+          <p>Copyright &copy; Designed & Developed by Kelompok 5</a> 2022/p>
+        </div>
+      </div>
+      <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+  </body>
+</html>
